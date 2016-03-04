@@ -18,6 +18,39 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    self.tabBarVC = [[UITabBarController alloc]init];
+    //主页
+    UIStoryboard *MainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *MainNav = MainSB.instantiateInitialViewController;
+    MainNav.tabBarItem.image = [UIImage imageNamed:@"zixun_new2"];
+    UIImage *selectImage = [UIImage imageNamed:@"zixun_new1"];
+    MainNav.tabBarItem.title = @"萌资讯";
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor darkGrayColor],NSForegroundColorAttributeName,nil]forState:UIControlStateNormal];
+    MainNav.tabBarItem.selectedImage = [selectImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //分类
+    UIStoryboard *ClassifySB = [UIStoryboard storyboardWithName:@"Classify" bundle:nil];
+    UINavigationController *ClassifyNav = ClassifySB.instantiateInitialViewController;
+    ClassifyNav.tabBarItem.image = [UIImage imageNamed:@"manhua_new2"];
+    UIImage *selectImage1 = [UIImage imageNamed:@"manhua_new1"];
+    ClassifyNav.tabBarItem.title = @"漫画";
+    ClassifyNav.tabBarItem.selectedImage = [selectImage1 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //购物车
+    UIStoryboard *BuySB = [UIStoryboard storyboardWithName:@"Buy" bundle:nil];
+    UINavigationController *BuyNav = BuySB.instantiateInitialViewController;
+    BuyNav.tabBarItem.image = [UIImage imageNamed:@"meitu_new2"];
+    UIImage *selectImage2 = [UIImage imageNamed:@"meitu_new1"];
+    BuyNav.tabBarItem.title = @"美图";
+    BuyNav.tabBarItem.selectedImage = [selectImage2 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //我的
+    UIStoryboard *MySB = [UIStoryboard storyboardWithName:@"My" bundle:nil];
+    UINavigationController *MyNav = MySB.instantiateInitialViewController;
+    MyNav.tabBarItem.image = [UIImage imageNamed:@"mengwo_new2"];
+    UIImage *selectImage3 = [UIImage imageNamed:@"mengwo_new1"];
+    MyNav.tabBarItem.title = @"萌窝";
+    MyNav.tabBarItem.selectedImage = [selectImage3 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    _tabBarVC.viewControllers = @[MainNav,ClassifyNav,BuyNav,MyNav];
+    self.window.rootViewController = _tabBarVC;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
