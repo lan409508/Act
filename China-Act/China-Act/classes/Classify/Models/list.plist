@@ -1,0 +1,82 @@
+{
+code = 0;
+error = "";
+extraInfo =     {
+countTotal = 5;
+otherTitle = "";
+otherType = 0;
+};
+params =     {
+"REQUEST_METHOD" = GET;
+page = 1;
+r = "cartoonBillBoard/list";
+size = 10;
+};
+results =     (
+{
+cartoonIds = "333,320,286,297,269,270,259,275,271,253,249,254,242,255,245,246,109,158,173,228,130,94,116,172,235,93,207,237,171,125";
+createTime = "2016-02-25 15:07:25";
+id = 11;
+images = "http://7xkbpd.com2.z0.glb.qiniucdn.com/77803ee3ddb3a38b3a87c6d2621b44be_786204.jpeg";
+modifyTime = "2016-02-25 15:07:25";
+name = "\U8d85\U5f3a\U4eba\U6c14\U699c";
+priority = 0;
+statisticMethod = 1;
+status = 1;
+url = "";
+userID = 10;
+},
+{
+cartoonIds = "";
+createTime = "2016-01-11 12:57:16";
+id = 1;
+images = "http://7xkbpd.com2.z0.glb.qiniucdn.com/4260201fcbbaa73df8e0161b178f1609_727450.jpeg";
+modifyTime = "2016-01-11 12:57:16";
+name = "\U6bcf\U5468\U70b9\U51fb\U699c";
+priority = 1;
+statisticMethod = 2;
+status = 1;
+url = "http://www.bing.com";
+userID = 10;
+},
+{
+cartoonIds = "333,314,259,270,293,323,251,260,268,256,257,252,228,146,95,136,117,140,63,89,135,88,255,185,181,168,235,218";
+createTime = "2016-03-04 18:18:32";
+id = 3;
+images = "http://7xkbpd.com2.z0.glb.qiniucdn.com/5129c87308f45f5d6a8d72fd1d775648_632721.jpeg";
+modifyTime = "2016-03-04 18:18:32";
+name = "\U6700\U5f3a\U63a8\U8350\U699c";
+priority = 3;
+statisticMethod = 1;
+status = 1;
+url = "";
+userID = 10;
+},
+{
+cartoonIds = "";
+createTime = "2016-01-11 13:05:29";
+id = 4;
+images = "http://7xkbpd.com2.z0.glb.qiniucdn.com/e1f291f12263bbf9e0271606cb3f15ce_644581.jpeg";
+modifyTime = "2016-01-11 13:05:29";
+name = "\U6bcf\U5468\U6536\U85cf\U699c";
+priority = 4;
+statisticMethod = 2;
+status = 1;
+url = "";
+userID = 14;
+},
+{
+cartoonIds = "333,285,108,256,289,314,136,197,210,252,125,228,260,258,149,109";
+createTime = "2016-02-25 15:07:33";
+id = 12;
+images = "http://7xkbpd.com2.z0.glb.qiniucdn.com/90ecb89f34bbe78e7b73c476e4561397_443628.jpeg";
+modifyTime = "2016-02-25 15:07:33";
+name = "\U50ac\U66f4\U4e0d\U505c\U699c";
+priority = 7;
+statisticMethod = 1;
+status = 1;
+url = "";
+userID = 10;
+}
+);
+}

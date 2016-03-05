@@ -1,0 +1,80 @@
+{
+code = 0;
+error = "";
+extraInfo =     (
+);
+params =     {
+"REQUEST_METHOD" = GET;
+id = 17727;
+pushtype = 0;
+r = "message/detail";
+withContent = 1;
+withPraise = 1;
+};
+results =     {
+author = "\U80d6\U6b21\U83cc";
+bad = 0;
+commentCount = 0;
+commentList =         (
+);
+content = "<span style=\"font-family:'Microsoft YaHei';font-size:16px;\">\U5982\U679c\U662f\U4e00\U540d\U521b\U4f5c\U8005\Uff0c\U90a3\U4e48\U80af\U5b9a\U4f1a\U975e\U5e38\U5728\U610f\U81ea\U5df1\U7684\U4f5c\U54c1\U80fd\U591f\U5f97\U5230\U600e\U6837\U7684\U8bc4\U4ef7\U5427\Uff1f\U4f46\U662f\U5982\U679c\U8fc7\U4e8e\U542c\U4ece\U522b\U4eba\U7684\U610f\U89c1\Uff0c\U6709\U7684\U65f6\U5019\U6216\U8bb8\U4e5f\U4f1a\U5f71\U54cd\U6211\U4eec\U7684\U521b\U4f5c\U3002\U8fd1\U65e5\U300a\U7070\U4e0e\U5e7b\U60f3\U7684\U683c\U6797\U59c6\U8fe6\U5c14\U300b\U4f5c\U8005\U8868\U793a\Uff1a\U4e0d\U4f1a\U968f\U4fbf\U542c\U522b\U4eba\U7684\U610f\U89c1\U3002</span><br />
+\n<div style=\"text-align:center;\">
+    \n\t<span style=\"line-height:1.5;\"><img src=\"http://7xkbpd.com2.z0.glb.qiniucdn.com/ba5e1146a229dab1241fab6e32861d11_151219.jpg\" alt=\"\" /><img src=\"http://7xkbpd.com2.z0.glb.qiniucdn.com/39f649dfee55be5a2145fb4d9d768ee3_31439.jpg\" alt=\"\" /></span>
+    \n</div>
+\n<span style=\"font-family:'Microsoft YaHei';font-size:16px;\">\U5728\U63a8\U7279\U4e0a\Uff0c\U5341\U6587\U5b57\U9752\U8868\U793a\Uff1a\U201c\U867d\U7136\U6211\U4ece\U6765\U6ca1\U6709\U8003\U8651\U8fc7\U4e0d\U4f1a\U88ab\U4eba\U8bc4\U5224\U3001\U4e0d\U8ba9\U522b\U4eba\U6279\U5224\U7684\U95ee\U9898\Uff0c\U4f46\U662f\U6211\U5df2\U7ecf\U51b3\U5b9a\U4e86\Uff1a\U9664\U4e86\U81ea\U5df1\U4fe1\U8d56\U7684\U4eba\U4e4b\U5916\Uff0c\U6211\U4e0d\U4f1a\U542c\U4efb\U4f55\U4eba\U7684\U610f\U89c1\U3002\U6211\U4e5f\U6709\U8fc7\U8ddf\U522b\U4eba\U78b0\U649e\U81ea\U5df1\U60f3\U6cd5\U7684\U7ecf\U5386\Uff0c\U4f46\U662f\U5bf9\U65b9\U5982\U4f55\U7406\U89e3\U6211\U7684\U6001\U5ea6\Uff0c\U4e5f\U662f\U5bf9\U65b9\U81ea\U5df1\U53bb\U8003\U8651\U7684\U95ee\U9898\U4e86\U3002\U201d</span><br />
+\n<br />
+\n<span style=\"font-family:'Microsoft YaHei';font-size:16px;\">\U5bf9\U6b64\Uff0c\U5f88\U591a\U65e5\U672c\U7f51\U53cb\U8868\U793a\Uff1a\U201c\U8fd9\U4e5f\U662f\U6b63\U5e38\U7684\U554a\Uff0c\U7f51\U7edc\U4e0a\U4e00\U4e9b\U4eba\U7eaf\U7cb9\U5c31\U662f\U4e3a\U4e86\U55b7\U800c\U55b7\U3002\U201d\U201c\U5e72\U8106\U65ad\U7f51\U5427\Uff0c\U8fd9\U6837\U5c31\U4e0d\U6015\U542c\U5230\U522b\U4eba\U8bf4\U8bdd\U4e86\U3002\U201d\U201c\U6211\U4e5f\U66fe\U7ecf\U5199\U8fc7\U5c0f\U8bf4\Uff0c\U80fd\U660e\U767d\U4ed6\U7684\U5fc3\U60c5\U3002\U201d\U800c\U5bf9\U6b64\Uff0c\U5404\U4f4d\U7f51\U53cb\U53c8\U6709\U4ec0\U4e48\U770b\U6cd5\U5462\Uff1f</span><br />";
+contentCount = 0;
+contentValue = "<!DOCTYPE html>\n                        <html>\n                        <head>\n                            <meta charset=\"UTF-8\">\n                            <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n                            <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">\n                        </head>\n                        <body><span style=\"font-family:'Microsoft YaHei';font-size:16px;\">\U5982\U679c\U662f\U4e00\U540d\U521b\U4f5c\U8005\Uff0c\U90a3\U4e48\U80af\U5b9a\U4f1a\U975e\U5e38\U5728\U610f\U81ea\U5df1\U7684\U4f5c\U54c1\U80fd\U591f\U5f97\U5230\U600e\U6837\U7684\U8bc4\U4ef7\U5427\Uff1f\U4f46\U662f\U5982\U679c\U8fc7\U4e8e\U542c\U4ece\U522b\U4eba\U7684\U610f\U89c1\Uff0c\U6709\U7684\U65f6\U5019\U6216\U8bb8\U4e5f\U4f1a\U5f71\U54cd\U6211\U4eec\U7684\U521b\U4f5c\U3002\U8fd1\U65e5\U300a\U7070\U4e0e\U5e7b\U60f3\U7684\U683c\U6797\U59c6\U8fe6\U5c14\U300b\U4f5c\U8005\U8868\U793a\Uff1a\U4e0d\U4f1a\U968f\U4fbf\U542c\U522b\U4eba\U7684\U610f\U89c1\U3002</span><br />
+    \n<div style=\"text-align:center;\">
+        \n\t<span style=\"line-height:1.5;\"><img src='http://7xkbpd.com2.z0.glb.qiniucdn.com/ba5e1146a229dab1241fab6e32861d11_151219.jpg' /><img src='http://7xkbpd.com2.z0.glb.qiniucdn.com/39f649dfee55be5a2145fb4d9d768ee3_31439.jpg' /></span>
+            \n</div>
+            \n<span style=\"font-family:'Microsoft YaHei';font-size:16px;\">\U5728\U63a8\U7279\U4e0a\Uff0c\U5341\U6587\U5b57\U9752\U8868\U793a\Uff1a\U201c\U867d\U7136\U6211\U4ece\U6765\U6ca1\U6709\U8003\U8651\U8fc7\U4e0d\U4f1a\U88ab\U4eba\U8bc4\U5224\U3001\U4e0d\U8ba9\U522b\U4eba\U6279\U5224\U7684\U95ee\U9898\Uff0c\U4f46\U662f\U6211\U5df2\U7ecf\U51b3\U5b9a\U4e86\Uff1a\U9664\U4e86\U81ea\U5df1\U4fe1\U8d56\U7684\U4eba\U4e4b\U5916\Uff0c\U6211\U4e0d\U4f1a\U542c\U4efb\U4f55\U4eba\U7684\U610f\U89c1\U3002\U6211\U4e5f\U6709\U8fc7\U8ddf\U522b\U4eba\U78b0\U649e\U81ea\U5df1\U60f3\U6cd5\U7684\U7ecf\U5386\Uff0c\U4f46\U662f\U5bf9\U65b9\U5982\U4f55\U7406\U89e3\U6211\U7684\U6001\U5ea6\Uff0c\U4e5f\U662f\U5bf9\U65b9\U81ea\U5df1\U53bb\U8003\U8651\U7684\U95ee\U9898\U4e86\U3002\U201d</span><br />
+            \n<br />
+            \n<span style=\"font-family:'Microsoft YaHei';font-size:16px;\">\U5bf9\U6b64\Uff0c\U5f88\U591a\U65e5\U672c\U7f51\U53cb\U8868\U793a\Uff1a\U201c\U8fd9\U4e5f\U662f\U6b63\U5e38\U7684\U554a\Uff0c\U7f51\U7edc\U4e0a\U4e00\U4e9b\U4eba\U7eaf\U7cb9\U5c31\U662f\U4e3a\U4e86\U55b7\U800c\U55b7\U3002\U201d\U201c\U5e72\U8106\U65ad\U7f51\U5427\Uff0c\U8fd9\U6837\U5c31\U4e0d\U6015\U542c\U5230\U522b\U4eba\U8bf4\U8bdd\U4e86\U3002\U201d\U201c\U6211\U4e5f\U66fe\U7ecf\U5199\U8fc7\U5c0f\U8bf4\Uff0c\U80fd\U660e\U767d\U4ed6\U7684\U5fc3\U60c5\U3002\U201d\U800c\U5bf9\U6b64\Uff0c\U5404\U4f4d\U7f51\U53cb\U53c8\U6709\U4ec0\U4e48\U770b\U6cd5\U5462\Uff1f</span><br /><style type=\"text/css\">\n\t                                 * {padding: 0px; margin: 0px; font-size: 18px;line-height: 30px; letter-spacing: 0px;  }\n\t                                img{max-width:100%; text-align:center;vertical-align:middle; margin:4px auto;}\n\t                                body{padding:2%;}\n\t                            </style></body> </html>";
+            createTime = "2016-03-05 11:14:43";
+            createTimeValue = "7\U5206\U949f\U524d";
+            divisionID = "";
+            fbDate = "";
+            games = "";
+            gamesID = 0;
+            good = 0;
+            id = 17727;
+            images = "http://7xkbpd.com2.z0.glb.qiniucdn.com/ba5e1146a229dab1241fab6e32861d11_151219.jpeg";
+            imagesCount = 2;
+            introduction = "\U5982\U679c\U662f\U4e00\U540d\U521b\U4f5c\U8005\Uff0c\U90a3\U4e48\U80af\U5b9a\U4f1a\U975e\U5e38\U5728\U610f\U81ea\U5df1\U7684\U4f5c\U54c1\U80fd\U591f\U5f97\U5230\U600e\U6837\U7684\U8bc4\U4ef7\U5427\Uff1f\U4f46\U662f\U5982\U679c\U8fc7\U4e8e\U542c\U4ece\U522b\U4eba\U7684\U610f\U89c1\Uff0c\U6709\U7684\U65f6\U5019\U6216\U8bb8\U4e5f\U4f1a\U5f71\U54cd\U6211\U4eec\U7684\U521b\U4f5c\U3002\U8fd1\U65e5\U300a\U7070\U4e0e\U5e7b\U60f3\U2026\U2026";
+            keyword = "";
+            label = "\U65b0\U95fb,\U7070\U4e0e\U5e7b\U60f3\U7684\U683c\U6797\U59c6\U52a0\U5c14";
+            level = 0;
+            modifyTime = "";
+            offStatus = 1;
+            position = "";
+            praiseCount = 0;
+            praiseList =         (
+            );
+            score = "";
+            shareContent = "\U5982\U679c\U662f\U4e00\U540d\U521b\U4f5c\U8005\Uff0c\U90a3\U4e48\U80af\U5b9a\U4f1a\U975e\U5e38\U5728\U610f\U2026\U2026";
+            shareUrl = "http://api.playsm.com/index.php?r=message/rtfContent&id=17727";
+            shoppingDate = "2016-03-05 11:12:00";
+            showTime = "2016-03-05 11:16:00";
+            sourceID = "";
+            sourceType = 0;
+            sourceUrl = "";
+            specialID = "";
+            status = 1;
+            textType = 3;
+            title = "\U300a\U7070\U4e0e\U5e7b\U60f3\U300b\U4f5c\U8005\Uff1a\U4e0d\U4f1a\U968f\U4fbf\U542c\U522b\U4eba\U7684\U610f\U89c1";
+            unionType = 1;
+            userID = 49664;
+            userIDInfo =         {
+            id = 49664;
+            images = "http://7xkbpd.com2.z0.glb.qiniucdn.com/f0343531cc16d60f73e26df0e0224c01_742767.jpg?e=1447758327&token=8bLqz-KeWiZ1mVJKV2Eg6lak2u0NTxmtFUzUUH-A:gQ0STAKavTNYYdk-OfjNBcH7jTg=";
+            informCount = 0;
+            name = "\U80d6\U6b21\U83cc";
+            sex = 2;
+            signature = "\U6587\U80fd\U63d0\U7b14\U63a7\U841d\U8389\Uff01\U6b66\U80fd\U5e8a\U4e0a\U5b9a\U4eba\U59bb\Uff01\U8fdb\U53ef\U6b3a\U8eab\U538b\U6b63\U592a\Uff01\U9000\U53ef\U63d0\U81c0\U8fce\U4f17\U57fa\Uff01";
+            };
+            userPraiseExists = 0;
+            viewCount = 0;
+            };
+            }

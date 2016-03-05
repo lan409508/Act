@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		36DA0D79D15A4244689F42FF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED495F08ADD093F12AABCF5F /* libPods.a */; };
+		7A1BE2551C8A811A00B60785 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1BE2541C8A811A00B60785 /* DetailViewController.m */; };
+		7A1BE2571C8A872D00B60785 /* detail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A1BE2561C8A872D00B60785 /* detail.plist */; };
+		7A1BE25A1C8A8B8B00B60785 /* DetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1BE2591C8A8B8B00B60785 /* DetailView.m */; };
+		7A1BE2691C8ADFC300B60785 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A1BE25C1C8ADFC300B60785 /* blueArrow.png */; };
+		7A1BE26A1C8ADFC300B60785 /* blueArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A1BE25D1C8ADFC300B60785 /* blueArrowDown.png */; };
+		7A1BE26B1C8ADFC300B60785 /* PullingRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1BE25F1C8ADFC300B60785 /* PullingRefreshTableView.m */; };
+		7A1BE26C1C8ADFC300B60785 /* VOContentLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1BE2621C8ADFC300B60785 /* VOContentLayer.m */; };
+		7A1BE26D1C8ADFC300B60785 /* VOIndicatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1BE2641C8ADFC300B60785 /* VOIndicatorAnimation.m */; };
+		7A1BE26E1C8ADFC300B60785 /* VOSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1BE2661C8ADFC300B60785 /* VOSegment.m */; };
+		7A1BE26F1C8ADFC300B60785 /* VOSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1BE2681C8ADFC300B60785 /* VOSegmentedControl.m */; };
+		7A1BE2711C8AEDA200B60785 /* category.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A1BE2701C8AEDA200B60785 /* category.plist */; };
+		7A1BE2731C8AEDC900B60785 /* recomment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A1BE2721C8AEDC900B60785 /* recomment.plist */; };
+		7A1BE2751C8AEDD600B60785 /* list.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A1BE2741C8AEDD600B60785 /* list.plist */; };
 		7A4E84FA1C88597600B3C209 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E84F91C88597600B3C209 /* main.m */; };
 		7A4E84FD1C88597600B3C209 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E84FC1C88597600B3C209 /* AppDelegate.m */; };
 		7A4E84FF1C88597600B3C209 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A4E84FE1C88597600B3C209 /* Assets.xcassets */; };
@@ -26,15 +39,32 @@
 		7AFA23361C895BC100611185 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFA23341C895BC100611185 /* MainTableViewCell.m */; };
 		7AFA23371C895BC100611185 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA23351C895BC100611185 /* MainTableViewCell.xib */; };
 		7AFA23391C89645D00611185 /* Main.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA23381C89645D00611185 /* Main.plist */; };
-		7AFA23401C896A6600611185 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA233C1C896A6600611185 /* blueArrow.png */; };
-		7AFA23411C896A6600611185 /* blueArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA233D1C896A6600611185 /* blueArrowDown.png */; };
-		7AFA23421C896A6600611185 /* PullingRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFA233F1C896A6600611185 /* PullingRefreshTableView.m */; };
 		7AFA23461C8995EF00611185 /* ad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA23451C8995EF00611185 /* ad.plist */; };
 		7AFA23491C89C95600611185 /* HWtools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFA23481C89C95600611185 /* HWtools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6A41778CE9A4B101CDE4B7D7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7A1BE2531C8A811A00B60785 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		7A1BE2541C8A811A00B60785 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		7A1BE2561C8A872D00B60785 /* detail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = detail.plist; sourceTree = "<group>"; };
+		7A1BE2581C8A8B8B00B60785 /* DetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailView.h; sourceTree = "<group>"; };
+		7A1BE2591C8A8B8B00B60785 /* DetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailView.m; sourceTree = "<group>"; };
+		7A1BE25C1C8ADFC300B60785 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		7A1BE25D1C8ADFC300B60785 /* blueArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrowDown.png; sourceTree = "<group>"; };
+		7A1BE25E1C8ADFC300B60785 /* PullingRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullingRefreshTableView.h; sourceTree = "<group>"; };
+		7A1BE25F1C8ADFC300B60785 /* PullingRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullingRefreshTableView.m; sourceTree = "<group>"; };
+		7A1BE2611C8ADFC300B60785 /* VOContentLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOContentLayer.h; sourceTree = "<group>"; };
+		7A1BE2621C8ADFC300B60785 /* VOContentLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOContentLayer.m; sourceTree = "<group>"; };
+		7A1BE2631C8ADFC300B60785 /* VOIndicatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOIndicatorAnimation.h; sourceTree = "<group>"; };
+		7A1BE2641C8ADFC300B60785 /* VOIndicatorAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOIndicatorAnimation.m; sourceTree = "<group>"; };
+		7A1BE2651C8ADFC300B60785 /* VOSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOSegment.h; sourceTree = "<group>"; };
+		7A1BE2661C8ADFC300B60785 /* VOSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOSegment.m; sourceTree = "<group>"; };
+		7A1BE2671C8ADFC300B60785 /* VOSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOSegmentedControl.h; sourceTree = "<group>"; };
+		7A1BE2681C8ADFC300B60785 /* VOSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOSegmentedControl.m; sourceTree = "<group>"; };
+		7A1BE2701C8AEDA200B60785 /* category.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = category.plist; sourceTree = "<group>"; };
+		7A1BE2721C8AEDC900B60785 /* recomment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = recomment.plist; sourceTree = "<group>"; };
+		7A1BE2741C8AEDD600B60785 /* list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = list.plist; sourceTree = "<group>"; };
 		7A4E84F51C88597600B3C209 /* China-Act.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "China-Act.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4E84F91C88597600B3C209 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A4E84FB1C88597600B3C209 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,10 +95,6 @@
 		7AFA23341C895BC100611185 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		7AFA23351C895BC100611185 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		7AFA23381C89645D00611185 /* Main.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Main.plist; sourceTree = "<group>"; };
-		7AFA233C1C896A6600611185 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
-		7AFA233D1C896A6600611185 /* blueArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrowDown.png; sourceTree = "<group>"; };
-		7AFA233E1C896A6600611185 /* PullingRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullingRefreshTableView.h; sourceTree = "<group>"; };
-		7AFA233F1C896A6600611185 /* PullingRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullingRefreshTableView.m; sourceTree = "<group>"; };
 		7AFA23451C8995EF00611185 /* ad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ad.plist; sourceTree = "<group>"; };
 		7AFA23471C89C95600611185 /* HWtools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWtools.h; sourceTree = "<group>"; };
 		7AFA23481C89C95600611185 /* HWtools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWtools.m; sourceTree = "<group>"; };
@@ -88,6 +114,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A1BE25B1C8ADFC300B60785 /* PullingRefreshTableView */ = {
+			isa = PBXGroup;
+			children = (
+				7A1BE25C1C8ADFC300B60785 /* blueArrow.png */,
+				7A1BE25D1C8ADFC300B60785 /* blueArrowDown.png */,
+				7A1BE25E1C8ADFC300B60785 /* PullingRefreshTableView.h */,
+				7A1BE25F1C8ADFC300B60785 /* PullingRefreshTableView.m */,
+			);
+			path = PullingRefreshTableView;
+			sourceTree = "<group>";
+		};
+		7A1BE2601C8ADFC300B60785 /* VOSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				7A1BE2611C8ADFC300B60785 /* VOContentLayer.h */,
+				7A1BE2621C8ADFC300B60785 /* VOContentLayer.m */,
+				7A1BE2631C8ADFC300B60785 /* VOIndicatorAnimation.h */,
+				7A1BE2641C8ADFC300B60785 /* VOIndicatorAnimation.m */,
+				7A1BE2651C8ADFC300B60785 /* VOSegment.h */,
+				7A1BE2661C8ADFC300B60785 /* VOSegment.m */,
+				7A1BE2671C8ADFC300B60785 /* VOSegmentedControl.h */,
+				7A1BE2681C8ADFC300B60785 /* VOSegmentedControl.m */,
+			);
+			path = VOSegmentedControl;
+			sourceTree = "<group>";
+		};
 		7A4E84EC1C88597600B3C209 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +250,9 @@
 		7A4E863A1C8875BE00B3C209 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7A1BE2721C8AEDC900B60785 /* recomment.plist */,
+				7A1BE2741C8AEDD600B60785 /* list.plist */,
+				7A1BE2701C8AEDA200B60785 /* category.plist */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,6 +280,8 @@
 			children = (
 				7A4E86441C88760A00B3C209 /* MainViewController.h */,
 				7A4E86451C88760A00B3C209 /* MainViewController.m */,
+				7A1BE2531C8A811A00B60785 /* DetailViewController.h */,
+				7A1BE2541C8A811A00B60785 /* DetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -236,6 +293,7 @@
 				7A4E86481C88762000B3C209 /* MainModel.m */,
 				7AFA23381C89645D00611185 /* Main.plist */,
 				7AFA23451C8995EF00611185 /* ad.plist */,
+				7A1BE2561C8A872D00B60785 /* detail.plist */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -247,6 +305,8 @@
 				7AFA23331C895BC100611185 /* MainTableViewCell.h */,
 				7AFA23341C895BC100611185 /* MainTableViewCell.m */,
 				7AFA23351C895BC100611185 /* MainTableViewCell.xib */,
+				7A1BE2581C8A8B8B00B60785 /* DetailView.h */,
+				7A1BE2591C8A8B8B00B60785 /* DetailView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,21 +377,10 @@
 		7AFA233A1C896A6600611185 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				7AFA233B1C896A6600611185 /* PullingRefreshTableView */,
+				7A1BE25B1C8ADFC300B60785 /* PullingRefreshTableView */,
+				7A1BE2601C8ADFC300B60785 /* VOSegmentedControl */,
 			);
 			path = Library;
-			sourceTree = "<group>";
-		};
-		7AFA233B1C896A6600611185 /* PullingRefreshTableView */ = {
-			isa = PBXGroup;
-			children = (
-				7AFA233C1C896A6600611185 /* blueArrow.png */,
-				7AFA233D1C896A6600611185 /* blueArrowDown.png */,
-				7AFA233E1C896A6600611185 /* PullingRefreshTableView.h */,
-				7AFA233F1C896A6600611185 /* PullingRefreshTableView.m */,
-			);
-			name = PullingRefreshTableView;
-			path = "PullingRefreshTableView副本";
 			sourceTree = "<group>";
 		};
 		8870A2EA71AC6DC81755C4A4 /* Pods */ = {
@@ -412,16 +461,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A1BE2751C8AEDD600B60785 /* list.plist in Resources */,
 				7A4E84FF1C88597600B3C209 /* Assets.xcassets in Resources */,
 				7AFA23151C89125000611185 /* Buy.storyboard in Resources */,
 				7A4E85021C88597600B3C209 /* LaunchScreen.storyboard in Resources */,
+				7A1BE26A1C8ADFC300B60785 /* blueArrowDown.png in Resources */,
+				7A1BE2691C8ADFC300B60785 /* blueArrow.png in Resources */,
 				7AFA23461C8995EF00611185 /* ad.plist in Resources */,
+				7A1BE2731C8AEDC900B60785 /* recomment.plist in Resources */,
 				7AFA23131C89123E00611185 /* Classify.storyboard in Resources */,
-				7AFA23411C896A6600611185 /* blueArrowDown.png in Resources */,
+				7A1BE2571C8A872D00B60785 /* detail.plist in Resources */,
+				7A1BE2711C8AEDA200B60785 /* category.plist in Resources */,
 				7AFA230E1C890A7B00611185 /* ProgressHUD.bundle in Resources */,
 				7AFA23371C895BC100611185 /* MainTableViewCell.xib in Resources */,
 				7AFA23111C8910C500611185 /* Main.storyboard in Resources */,
-				7AFA23401C896A6600611185 /* blueArrow.png in Resources */,
 				7AFA23171C89125D00611185 /* My.storyboard in Resources */,
 				7AFA23391C89645D00611185 /* Main.plist in Resources */,
 			);
@@ -484,15 +537,21 @@
 			files = (
 				7AFA231A1C89131300611185 /* ClassifyViewController.m in Sources */,
 				7AFA23491C89C95600611185 /* HWtools.m in Sources */,
+				7A1BE26D1C8ADFC300B60785 /* VOIndicatorAnimation.m in Sources */,
+				7A1BE26F1C8ADFC300B60785 /* VOSegmentedControl.m in Sources */,
 				7A4E84FD1C88597600B3C209 /* AppDelegate.m in Sources */,
 				7AFA23201C89132700611185 /* MyViewController.m in Sources */,
-				7AFA23421C896A6600611185 /* PullingRefreshTableView.m in Sources */,
+				7A1BE26B1C8ADFC300B60785 /* PullingRefreshTableView.m in Sources */,
 				7AFA23361C895BC100611185 /* MainTableViewCell.m in Sources */,
 				7A4E86491C88762000B3C209 /* MainModel.m in Sources */,
 				7AFA230F1C890A7B00611185 /* ProgressHUD.m in Sources */,
+				7A1BE26C1C8ADFC300B60785 /* VOContentLayer.m in Sources */,
 				7AFA231D1C89131E00611185 /* BuyViewController.m in Sources */,
 				7A4E84FA1C88597600B3C209 /* main.m in Sources */,
 				7A4E86461C88760A00B3C209 /* MainViewController.m in Sources */,
+				7A1BE25A1C8A8B8B00B60785 /* DetailView.m in Sources */,
+				7A1BE26E1C8ADFC300B60785 /* VOSegment.m in Sources */,
+				7A1BE2551C8A811A00B60785 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

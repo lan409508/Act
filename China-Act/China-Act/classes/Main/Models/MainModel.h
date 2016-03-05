@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *adImage;
 @property (nonatomic, strong) NSString *adTitle;
 @property (nonatomic, strong) NSString *params;
+@property (nonatomic, strong) NSString *share;
 
 -(instancetype)initWithDictonary:(NSDictionary *)dict rType:(NSString *)rType;
 

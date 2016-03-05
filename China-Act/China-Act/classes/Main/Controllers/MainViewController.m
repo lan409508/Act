@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "DetailViewController.h"
 #import "PullingRefreshTableView.h"
 #import "HWtools.h"
 #import "MainModel.h"
@@ -22,6 +23,7 @@
 }
 @property (nonatomic, strong) UIView *headerTableView;
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) NSMutableArray *listArray;
 @property (nonatomic, strong) PullingRefreshTableView *tableView;
 @property (nonatomic, assign) BOOL refreshing;
@@ -48,7 +50,7 @@
     [self.view addSubview:self.tableView];
     [self loadData];
     [self getModel];
-    [self HeaderTableView];
+    [self startTimer];
 }
 
 #pragma mark -------- lazy loading
@@ -80,8 +82,6 @@
     if (_scrollView == nil) {
         self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kWidth, 160)];
         self.scrollView.contentSize = CGSizeMake(kWidth * self.adArray.count, 130);
-        
-        self.scrollView.backgroundColor = [UIColor blackColor];
         self.scrollView.pagingEnabled = YES;
         self.scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.delegate = self;
@@ -90,9 +90,10 @@
 }
 - (UIPageControl *)pageControl{
     if (_pageControl == nil) {
-        self.pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(200, 130, 100, 30)];
+        self.pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(260, 130, 100, 30)];
         self.pageControl.pageIndicatorTintColor = [UIColor whiteColor];
         self.pageControl.currentPageIndicatorTintColor = [UIColor redColor];
+        [self.pageControl addTarget:self action:@selector(pageSelect:) forControlEvents:UIControlEventValueChanged];
     }
     return _pageControl;
 }
@@ -103,19 +104,20 @@
     return self.listArray.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MainTableViewCell *mainCell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     mainCell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.row < self.listArray.count) {
         mainCell.mainModel = self.listArray[indexPath.row];
     }
-
     return mainCell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DetailViewController *detailVC = [[DetailViewController alloc]init];
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
 
-//上拉开始刷新
 //下拉刷新
 - (void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView {
     _pageCount = 1;
@@ -134,21 +136,6 @@
 }
 
 #pragma mark --------- CostumMethod
-- (void)HeaderTableView {
-    self.headerTableView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWidth, 160)];
-    [self.headerTableView addSubview:self.scrollView];
-    self.pageControl.numberOfPages = self.adArray.count;
-    
-    [self.headerTableView addSubview:self.pageControl];
-    for (int i = 0; i < self.adArray.count; i++) {
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(kWidth * i, 0, kWidth, 130)];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:self.adArray[i][@"images"]] placeholderImage:nil];
-        imageView.userInteractionEnabled = YES;
-        [self.scrollView addSubview:imageView];
-    }
-    self.tableView.tableHeaderView = self.headerTableView;
-}
-
 - (void)getModel{
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
@@ -166,6 +153,8 @@
                 [self.adArray addObject:model];
             }
         }
+        [self HeaderTableView];
+
         [self.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];
@@ -193,6 +182,76 @@
    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
      //  NSLog(@"%@",error);
    }];
+}
+
+- (void)HeaderTableView {
+    self.headerTableView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWidth, 160)];
+    [self.headerTableView addSubview:self.scrollView];
+    self.pageControl.numberOfPages = self.adArray.count;
+    [self.headerTableView addSubview:self.pageControl];
+    for (int i = 0; i < self.adArray.count; i++) {
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(kWidth * i, 0, kWidth, 170)];
+        MainModel *model = self.adArray[i];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:model.adImage] placeholderImage:nil];
+        imageView.userInteractionEnabled = YES;
+        UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(kWidth * i, 130, 250, 30)];
+        titleLabel.text = model.adTitle;
+        titleLabel.font = [UIFont systemFontOfSize:14.0];
+        titleLabel.textColor = [UIColor whiteColor];
+        [self.scrollView addSubview:imageView];
+        [self.scrollView addSubview:titleLabel];
+        UIButton *touchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        touchBtn.frame = imageView.frame;
+        touchBtn.tag = 100 + i;
+        [touchBtn addTarget:self action:@selector(adAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    self.tableView.tableHeaderView = self.headerTableView;
+}
+
+#pragma mark --------- 滚动轮播图
+//定时器
+- (void)startTimer{
+    if (self.timer != nil) {
+        return;
+    }
+    self.timer = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(roll) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)roll{
+    if (self.adArray.count > 0) {
+        NSInteger page = (self.pageControl.currentPage + 1) % self.adArray.count;
+        self.pageControl.currentPage = page;
+        CGFloat offsetX = self.pageControl.currentPage * self.scrollView.frame.size.width;
+        [self.scrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    }
+    
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [self.timer invalidate];
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    [self startTimer];
+}
+
+#pragma mark --------- 轮播图
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    CGPoint offset = self.scrollView.contentOffset;
+    NSInteger pageNum = offset.x / pageWidth;
+    self.pageControl.currentPage = pageNum;
+}
+
+- (void)pageSelect:(UIPageControl *)pageControl {
+    NSInteger pageNumber = pageControl.currentPage;
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    self.scrollView.contentOffset = CGPointMake(pageNumber * pageWidth, 0);
+}
+
+- (void)adAction:(UIButton *)btn {
+    
 }
 
 - (void)didReceiveMemoryWarning {
