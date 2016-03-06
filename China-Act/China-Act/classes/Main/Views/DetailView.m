@@ -9,10 +9,8 @@
 #import "DetailView.h"
 
 @interface DetailView ()
-
-
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabal;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 
@@ -20,17 +18,8 @@
 
 @implementation DetailView
 
-- (instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self configView];
-    }
-    return self;
-}
-
--(void)configView{
-    
-    [self addSubview:self.scrollView];
+- (void)awakeFromNib{
+    self.scrollView.contentSize = CGSizeMake(kWidth, 5000);
 }
 
 -(void)setDetailModel:(MainModel *)detailModel{

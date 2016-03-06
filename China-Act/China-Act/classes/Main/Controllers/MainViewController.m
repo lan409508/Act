@@ -114,7 +114,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    DetailViewController *detailVC = [[DetailViewController alloc]init];
+    MainModel *mainModel = self.listArray[indexPath.row];
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DetailViewController *detailVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"DetailVC"];
+//    DetailViewController *detailVC = [[DetailViewController alloc]init];
+    detailVC.detailId = mainModel.share;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
@@ -172,6 +176,11 @@
        if ([error isEqualToString:@""] && code == 0 ) {
             NSString *rType = dic[@"params"][@"r"];
            NSArray *array = dic[@"results"];
+           if (self.listArray.count > 0) {
+               if (self.refreshing) {
+                   [self.listArray removeAllObjects];
+               }
+           }
            for (NSDictionary *dict in array) {
                MainModel *model = [[MainModel alloc]initWithDictonary:dict rType:rType];
                 [self.listArray addObject:model];
@@ -183,6 +192,18 @@
      //  NSLog(@"%@",error);
    }];
 }
+
+//手指拖动
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self.tableView tableViewDidScroll:scrollView];
+}
+
+//手指结束拖动
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    [self.tableView tableViewDidEndDragging:scrollView];
+    [self startTimer];
+}
+
 
 - (void)HeaderTableView {
     self.headerTableView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWidth, 160)];
@@ -231,9 +252,9 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     [self.timer invalidate];
 }
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    [self startTimer];
-}
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+//    [self startTimer];
+//}
 
 #pragma mark --------- 轮播图
 

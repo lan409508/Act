@@ -20,7 +20,7 @@
             self.title = dict[@"title"];
             self.time = dict[@"createTimeValue"];
             self.author = dict[@"author"];
-            self.share = dict[@"shareUrl"];
+            self.share = dict[@"id"];
         }
         else if ([self.QuFen isEqualToString:@"adImage/list"]){
             self.adImage = dict[@"images"];

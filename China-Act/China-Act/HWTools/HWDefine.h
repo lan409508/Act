@@ -23,8 +23,14 @@ typedef NS_ENUM(NSInteger,ClassifyListType) {
 #define ad @"http://api.playsm.com/index.php?size=999&r=adImage%2Flist&customPosition=1&page=1&"
 //详情接口
 #define kDetail @"http://api.playsm.com/index.php?withContent=1&r=message%2Fdetail&withPraise=1&id=17727&pushtype=0&"
-//推荐接口
-#define kRecommend @"http://api.playsm.com/index.php?size=999&r=recommend%2FgetUserRecommendList&page=1&"
+//更新接口
+#define kGengxin @"http://api.playsm.com/index.php?size=20&r=cartoonCategory%2FgetCartoonSetListByCategory&id=20&page=1&"
+//推荐
+#define kTuijian @"http://api.playsm.com/index.php?size=20&r=cartoonBillBoard%2FgetCartoonSetListByBillBoard&id=3&page=1&"
+//收藏
+#define KShoucang @"http://api.playsm.com/index.php?size=20&r=cartoonBillBoard%2FgetCartoonSetListByBillBoard&id=4&page=1&"
+//最新
+#define kZuixin @"http://api.playsm.com/index.php?size=20&r=cartoonCategory%2FgetCartoonSetListByCategory&id=21&page=1&"
 //推荐滚动接口
 #define kRSCroll @"http://api.playsm.com/index.php?size=999&r=adImage%2Flist&customPosition=2&page=1&"
 //榜单接口
