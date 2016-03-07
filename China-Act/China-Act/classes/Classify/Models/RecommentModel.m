@@ -2,7 +2,7 @@
 //  RecommentModel.m
 //  China-Act
 //
-//  Created by scjy on 16/3/6.
+//  Created by scjy on 16/3/7.
 //  Copyright © 2016年 练晓俊. All rights reserved.
 //
 
@@ -10,10 +10,10 @@
 
 @implementation RecommentModel
 
-- (instancetype)initWithDictionary:(NSDictionary *)dict{
+- (instancetype)initWithDictionary:(NSDictionary *)dataDic{
     if (self) {
-        self.image = dict[@"images"];
-        self.name = dict[@"name"];
+        self.title = dataDic[@"title"];
+        self.rType = dataDic[@"r"];
     }
     return self;
 }

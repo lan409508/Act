@@ -27,6 +27,9 @@
 		7A4E85021C88597600B3C209 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4E85001C88597600B3C209 /* LaunchScreen.storyboard */; };
 		7A4E86461C88760A00B3C209 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E86451C88760A00B3C209 /* MainViewController.m */; };
 		7A4E86491C88762000B3C209 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4E86481C88762000B3C209 /* MainModel.m */; };
+		7A5038EA1C8D9E7D001DAB2F /* RecommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5038E91C8D9E7D001DAB2F /* RecommentModel.m */; };
+		7A5038F11C8DA6DE001DAB2F /* RecommentCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5038EF1C8DA6DE001DAB2F /* RecommentCollectionReusableView.m */; };
+		7A5038F21C8DA6DE001DAB2F /* RecommentCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A5038F01C8DA6DE001DAB2F /* RecommentCollectionReusableView.xib */; };
 		7AFA230E1C890A7B00611185 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA230B1C890A7B00611185 /* ProgressHUD.bundle */; };
 		7AFA230F1C890A7B00611185 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFA230D1C890A7B00611185 /* ProgressHUD.m */; };
 		7AFA23111C8910C500611185 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA23101C8910C500611185 /* Main.storyboard */; };
@@ -41,13 +44,10 @@
 		7AFA23391C89645D00611185 /* Main.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA23381C89645D00611185 /* Main.plist */; };
 		7AFA23461C8995EF00611185 /* ad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA23451C8995EF00611185 /* ad.plist */; };
 		7AFA23491C89C95600611185 /* HWtools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFA23481C89C95600611185 /* HWtools.m */; };
-		7AFA5A251C8C160200D933F4 /* RecommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFA5A241C8C160200D933F4 /* RecommentModel.m */; };
 		7AFA5A2C1C8C1E3900D933F4 /* gengxin.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA5A2B1C8C1E3900D933F4 /* gengxin.plist */; };
 		7AFA5A2E1C8C1F2200D933F4 /* tuijian.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA5A2D1C8C1F2200D933F4 /* tuijian.plist */; };
 		7AFA5A301C8C1FC700D933F4 /* shoucang.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA5A2F1C8C1FC700D933F4 /* shoucang.plist */; };
 		7AFA5A321C8C200100D933F4 /* zuixin.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA5A311C8C200100D933F4 /* zuixin.plist */; };
-		7AFA5A361C8C270000D933F4 /* RecommentCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFA5A341C8C270000D933F4 /* RecommentCollectionReusableView.m */; };
-		7AFA5A371C8C270000D933F4 /* RecommentCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA5A351C8C270000D933F4 /* RecommentCollectionReusableView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +83,11 @@
 		7A4E86451C88760A00B3C209 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7A4E86471C88762000B3C209 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
 		7A4E86481C88762000B3C209 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
+		7A5038E81C8D9E7D001DAB2F /* RecommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommentModel.h; sourceTree = "<group>"; };
+		7A5038E91C8D9E7D001DAB2F /* RecommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommentModel.m; sourceTree = "<group>"; };
+		7A5038EE1C8DA6DE001DAB2F /* RecommentCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommentCollectionReusableView.h; sourceTree = "<group>"; };
+		7A5038EF1C8DA6DE001DAB2F /* RecommentCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommentCollectionReusableView.m; sourceTree = "<group>"; };
+		7A5038F01C8DA6DE001DAB2F /* RecommentCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommentCollectionReusableView.xib; sourceTree = "<group>"; };
 		7AFA230B1C890A7B00611185 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		7AFA230C1C890A7B00611185 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		7AFA230D1C890A7B00611185 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
@@ -105,15 +110,10 @@
 		7AFA23451C8995EF00611185 /* ad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ad.plist; sourceTree = "<group>"; };
 		7AFA23471C89C95600611185 /* HWtools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWtools.h; sourceTree = "<group>"; };
 		7AFA23481C89C95600611185 /* HWtools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWtools.m; sourceTree = "<group>"; };
-		7AFA5A231C8C160200D933F4 /* RecommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommentModel.h; sourceTree = "<group>"; };
-		7AFA5A241C8C160200D933F4 /* RecommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommentModel.m; sourceTree = "<group>"; };
 		7AFA5A2B1C8C1E3900D933F4 /* gengxin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gengxin.plist; sourceTree = "<group>"; };
 		7AFA5A2D1C8C1F2200D933F4 /* tuijian.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tuijian.plist; sourceTree = "<group>"; };
 		7AFA5A2F1C8C1FC700D933F4 /* shoucang.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = shoucang.plist; sourceTree = "<group>"; };
 		7AFA5A311C8C200100D933F4 /* zuixin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zuixin.plist; sourceTree = "<group>"; };
-		7AFA5A331C8C270000D933F4 /* RecommentCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommentCollectionReusableView.h; sourceTree = "<group>"; };
-		7AFA5A341C8C270000D933F4 /* RecommentCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommentCollectionReusableView.m; sourceTree = "<group>"; };
-		7AFA5A351C8C270000D933F4 /* RecommentCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommentCollectionReusableView.xib; sourceTree = "<group>"; };
 		BB2C1FE33E7040E78DF7C6BD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		ED495F08ADD093F12AABCF5F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -273,8 +273,8 @@
 				7AFA5A311C8C200100D933F4 /* zuixin.plist */,
 				7A1BE2741C8AEDD600B60785 /* list.plist */,
 				7A1BE2701C8AEDA200B60785 /* category.plist */,
-				7AFA5A231C8C160200D933F4 /* RecommentModel.h */,
-				7AFA5A241C8C160200D933F4 /* RecommentModel.m */,
+				7A5038E81C8D9E7D001DAB2F /* RecommentModel.h */,
+				7A5038E91C8D9E7D001DAB2F /* RecommentModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,9 +283,9 @@
 			isa = PBXGroup;
 			children = (
 				7AFA23121C89123E00611185 /* Classify.storyboard */,
-				7AFA5A331C8C270000D933F4 /* RecommentCollectionReusableView.h */,
-				7AFA5A341C8C270000D933F4 /* RecommentCollectionReusableView.m */,
-				7AFA5A351C8C270000D933F4 /* RecommentCollectionReusableView.xib */,
+				7A5038EE1C8DA6DE001DAB2F /* RecommentCollectionReusableView.h */,
+				7A5038EF1C8DA6DE001DAB2F /* RecommentCollectionReusableView.m */,
+				7A5038F01C8DA6DE001DAB2F /* RecommentCollectionReusableView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 				7A1BE2711C8AEDA200B60785 /* category.plist in Resources */,
 				7AFA230E1C890A7B00611185 /* ProgressHUD.bundle in Resources */,
 				7AFA23371C895BC100611185 /* MainTableViewCell.xib in Resources */,
-				7AFA5A371C8C270000D933F4 /* RecommentCollectionReusableView.xib in Resources */,
+				7A5038F21C8DA6DE001DAB2F /* RecommentCollectionReusableView.xib in Resources */,
 				7AFA23111C8910C500611185 /* Main.storyboard in Resources */,
 				7AFA23171C89125D00611185 /* My.storyboard in Resources */,
 				7AFA23391C89645D00611185 /* Main.plist in Resources */,
@@ -573,14 +573,14 @@
 				7AFA23201C89132700611185 /* MyViewController.m in Sources */,
 				7A1BE26B1C8ADFC300B60785 /* PullingRefreshTableView.m in Sources */,
 				7AFA23361C895BC100611185 /* MainTableViewCell.m in Sources */,
-				7AFA5A361C8C270000D933F4 /* RecommentCollectionReusableView.m in Sources */,
+				7A5038F11C8DA6DE001DAB2F /* RecommentCollectionReusableView.m in Sources */,
 				7A4E86491C88762000B3C209 /* MainModel.m in Sources */,
 				7AFA230F1C890A7B00611185 /* ProgressHUD.m in Sources */,
 				7A1BE26C1C8ADFC300B60785 /* VOContentLayer.m in Sources */,
 				7AFA231D1C89131E00611185 /* BuyViewController.m in Sources */,
 				7A4E84FA1C88597600B3C209 /* main.m in Sources */,
 				7A4E86461C88760A00B3C209 /* MainViewController.m in Sources */,
-				7AFA5A251C8C160200D933F4 /* RecommentModel.m in Sources */,
+				7A5038EA1C8D9E7D001DAB2F /* RecommentModel.m in Sources */,
 				7A1BE25A1C8A8B8B00B60785 /* DetailView.m in Sources */,
 				7A1BE26E1C8ADFC300B60785 /* VOSegment.m in Sources */,
 				7A1BE2551C8A811A00B60785 /* DetailViewController.m in Sources */,

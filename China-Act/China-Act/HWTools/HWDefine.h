@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger,ClassifyListType) {
-    ClassifyListTypeRecommended = 0,
+    ClassifyListTypeRecommended = 1,
     ClassifyListTypeList,
     ClassifyListTypeCategory,
 };
@@ -25,6 +25,8 @@ typedef NS_ENUM(NSInteger,ClassifyListType) {
 #define kDetail @"http://api.playsm.com/index.php?withContent=1&r=message%2Fdetail&withPraise=1&id=17727&pushtype=0&"
 //更新接口
 #define kGengxin @"http://api.playsm.com/index.php?size=20&r=cartoonCategory%2FgetCartoonSetListByCategory&id=20&page=1&"
+//漫画推荐接口
+#define kRecomment @"http://api.playsm.com/index.php?size=999&r=recommend%2FgetUserRecommendList&page=1&"
 //推荐
 #define kTuijian @"http://api.playsm.com/index.php?size=20&r=cartoonBillBoard%2FgetCartoonSetListByBillBoard&id=3&page=1&"
 //收藏
