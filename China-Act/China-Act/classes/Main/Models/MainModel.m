@@ -15,12 +15,14 @@
     if (self) {
         self.params = dict[@"params"];
         self.QuFen = rType;
+        self.share = dict[@"shareUrl"];
+        self.ID = dict[@"id"];
         if ([self.QuFen isEqualToString:@"message/list"]) {
             self.image = dict[@"images"];
             self.title = dict[@"title"];
             self.time = dict[@"createTimeValue"];
             self.author = dict[@"author"];
-            self.share = dict[@"id"];
+            
         }
         else if ([self.QuFen isEqualToString:@"adImage/list"]){
             self.adImage = dict[@"images"];

@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSString *adTitle;
 @property (nonatomic, strong) NSString *params;
 @property (nonatomic, strong) NSString *share;
+@property (nonatomic, strong) NSString *ID;
 
 -(instancetype)initWithDictonary:(NSDictionary *)dict rType:(NSString *)rType;
 

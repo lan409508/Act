@@ -8,19 +8,26 @@
 
 #import "DetailViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
+#import "UIViewController+Common.h"
+#import "MainModel.h"
 @interface DetailViewController ()
 
 @property (nonatomic, strong) NSMutableArray *listArray;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 @end
 
 @implementation DetailViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor redColor];
+    [self.view addSubview:self.scrollView];
+    [self showBackBtn];
     [self getModel];
+    
 }
 
 - (void)getModel{
@@ -31,14 +38,29 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;
         NSString *error = dic[@"error"];
+//        NSString *rType = dic[@"r"];
         NSInteger code = [dic[@"code"] integerValue];
         if ([error isEqualToString:@""] && code == 0) {
-//            NSDictionary *dict = dic[@"results"];
-            
+            NSArray *dataArray = dic[@"results"];
+            for (NSDictionary *dict in dataArray) {
+                self.navigationItem.title = dict[@"title"];
+                [self.listArray addObject:dict[@"shareUrl"]];
+                
+            }
         }
+//        [self.scrollView  ];
+//        [self.scrollView addSubview:<#(nonnull UIView *)#>];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
+}
+
+- (UIScrollView *)scrollView {
+    if (_scrollView == nil) {
+        self.scrollView = [[UIScrollView alloc] init];
+        self.scrollView.contentSize = CGSizeMake(kWidth, 2000);
+    }
+    return _scrollView;
 }
 
 - (void)didReceiveMemoryWarning {

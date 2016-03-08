@@ -118,7 +118,7 @@
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DetailViewController *detailVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"DetailVC"];
 //    DetailViewController *detailVC = [[DetailViewController alloc]init];
-    detailVC.detailId = mainModel.share;
+    detailVC.detailId = mainModel.ID;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
@@ -144,7 +144,6 @@
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [sessionManager GET:ad parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;
         NSString *error = dic[@"error"];
@@ -158,7 +157,6 @@
             }
         }
         [self HeaderTableView];
-
         [self.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];
@@ -219,12 +217,14 @@
         titleLabel.text = model.adTitle;
         titleLabel.font = [UIFont systemFontOfSize:14.0];
         titleLabel.textColor = [UIColor whiteColor];
-        [self.scrollView addSubview:imageView];
-        [self.scrollView addSubview:titleLabel];
         UIButton *touchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         touchBtn.frame = imageView.frame;
         touchBtn.tag = 100 + i;
         [touchBtn addTarget:self action:@selector(adAction:) forControlEvents:UIControlEventTouchUpInside];
+        [imageView addSubview:touchBtn];
+        [self.scrollView addSubview:imageView];
+        [self.scrollView addSubview:titleLabel];
+    
     }
     self.tableView.tableHeaderView = self.headerTableView;
 }
@@ -248,13 +248,10 @@
     }
     
 }
-
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     [self.timer invalidate];
+    self.timer = nil;
 }
-//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-//    [self startTimer];
-//}
 
 #pragma mark --------- 轮播图
 
@@ -272,7 +269,10 @@
 }
 
 - (void)adAction:(UIButton *)btn {
-    
+//    NSString *url = self.adArray[btn.tag - 100][@"shareUrl"];
+    DetailViewController *detailVC = [[DetailViewController alloc] init];
+    detailVC.detailId = self.adArray[btn.tag - 100][@"id"];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

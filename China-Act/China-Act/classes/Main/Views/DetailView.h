@@ -10,7 +10,7 @@
 #import "MainModel.h"
 @interface DetailView : UIView
 
-@property (nonatomic, strong) MainModel *detailModel;
+@property (nonatomic, strong) NSDictionary *dataDic;
 
 
 @end

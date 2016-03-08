@@ -1,0 +1,65 @@
+{
+code = 0;
+error = "";
+extraInfo =     (
+);
+params =     {
+"REQUEST_METHOD" = GET;
+id = 356;
+r = "cartoonSet/detail";
+};
+results =     {
+author = "\U590f\U65e5\U5149\U5f71";
+cartoonChapterCount = 1;
+cartoonChapterList =         (
+{
+cartoonId = 356;
+cartoonName = "\U4e94\U8272\U70df";
+downloadStatus = 0;
+id = 11146;
+name = "\U5168\U4e00\U8bdd";
+priority = 1;
+readStatus = 0;
+status = 1;
+totalAlbumCount = 24;
+totalChapterSize = 6490975;
+}
+);
+categorys = "1,16";
+collectionStatus = 0;
+commentCount = 0;
+commentList =         (
+);
+contentCount = 0;
+createTime = "2016-03-08 11:23:42";
+currentReadAlbumId = "";
+currentReadChapterId = "";
+id = 356;
+images = "http://7xkbpd.com2.z0.glb.qiniucdn.com/dc1b3a6fca18cc8e2f5945406d702010_23867.jpeg";
+introduction = "\U4e94\U8272\U70df";
+isOver = 1;
+level = 0;
+modifyTime = "2016-03-08 11:23:42";
+name = "\U4e94\U8272\U70df";
+priority = 9;
+readMode = 0;
+recentUpdateTime = "2016-03-08";
+remark = "";
+status = 1;
+thirdID = "";
+thirdUpdateTime = "";
+totalCartoonSize = 6490975;
+totalChapterCount = 1;
+updateInfo = "\U5df2\U5b8c\U7ed3";
+updateType = 6;
+updateValue = "";
+updateValueLabel = "\U5df2\U5b8c\U7ed3";
+userID = 52212;
+userIDInfo =         {
+id = 52212;
+informCount = 0;
+name = "\U5706\U8138\U8089\U5305\U8036";
+username = 15026951793;
+};
+};
+}

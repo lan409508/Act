@@ -10,8 +10,9 @@
 
 @interface RecommentModel : NSObject
 
+@property (nonatomic, strong) NSString *image;
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *rType;
+@property (nonatomic, strong) NSString *classifyId;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dataDic;
 

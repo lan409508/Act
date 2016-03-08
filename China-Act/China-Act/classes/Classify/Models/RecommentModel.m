@@ -12,8 +12,9 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dataDic{
     if (self) {
-        self.title = dataDic[@"title"];
-        self.rType = dataDic[@"r"];
+        self.title = dataDic[@"name"];
+        self.image = dataDic[@"images"];
+        self.classifyId = dataDic[@"id"];
     }
     return self;
 }

@@ -9,21 +9,39 @@
 #import "DetailView.h"
 
 @interface DetailView ()
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
+
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 @end
 
 @implementation DetailView
 
-- (void)awakeFromNib{
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self configView];
+    }
+    return self;
+}
+
+- (void)setDataDic:(NSDictionary *)dataDic {
+    [self drawContentWithArray:dataDic[@"url"]];
+}
+
+- (void)drawContentWithArray:(NSArray *)dataArray {
+    
+}
+
+- (void)configView {
+    [self addSubview:self.scrollView];
     self.scrollView.contentSize = CGSizeMake(kWidth, 5000);
 }
 
--(void)setDetailModel:(MainModel *)detailModel{
-    
+- (UIScrollView *)scrollView {
+    if (_scrollView == nil) {
+        self.scrollView = [[UIScrollView alloc] initWithFrame:self.frame];
+    }
+    return _scrollView;
 }
 
 @end
