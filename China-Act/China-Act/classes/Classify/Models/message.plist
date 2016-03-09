@@ -5,55 +5,115 @@ extraInfo =     (
 );
 params =     {
 "REQUEST_METHOD" = GET;
-id = 356;
+id = 358;
 r = "cartoonSet/detail";
 };
 results =     {
-author = "\U590f\U65e5\U5149\U5f71";
-cartoonChapterCount = 1;
+author = "\U98de\U7fbd\U9e4f\U9e4f";
+cartoonChapterCount = 6;
 cartoonChapterList =         (
 {
-cartoonId = 356;
-cartoonName = "\U4e94\U8272\U70df";
+cartoonId = 358;
+cartoonName = "\U5f71\U7075\U4f20\U8bf4";
 downloadStatus = 0;
-id = 11146;
-name = "\U5168\U4e00\U8bdd";
+id = 11168;
+name = "\U7b2c0\U8bdd";
 priority = 1;
 readStatus = 0;
 status = 1;
-totalAlbumCount = 24;
-totalChapterSize = 6490975;
+totalAlbumCount = 22;
+totalChapterSize = 4291848;
+},
+{
+cartoonId = 358;
+cartoonName = "\U5f71\U7075\U4f20\U8bf4";
+downloadStatus = 0;
+id = 11169;
+name = "\U7b2c1\U8bdd";
+priority = 2;
+readStatus = 0;
+status = 1;
+totalAlbumCount = 22;
+totalChapterSize = 4017219;
+},
+{
+cartoonId = 358;
+cartoonName = "\U5f71\U7075\U4f20\U8bf4";
+downloadStatus = 0;
+id = 11170;
+name = "\U7b2c2\U8bdd";
+priority = 3;
+readStatus = 0;
+status = 1;
+totalAlbumCount = 16;
+totalChapterSize = 2943910;
+},
+{
+cartoonId = 358;
+cartoonName = "\U5f71\U7075\U4f20\U8bf4";
+downloadStatus = 0;
+id = 11171;
+name = "\U7b2c3\U8bdd";
+priority = 4;
+readStatus = 0;
+status = 1;
+totalAlbumCount = 26;
+totalChapterSize = 5716308;
+},
+{
+cartoonId = 358;
+cartoonName = "\U5f71\U7075\U4f20\U8bf4";
+downloadStatus = 0;
+id = 11172;
+name = "\U7b2c4\U8bdd";
+priority = 5;
+readStatus = 0;
+status = 1;
+totalAlbumCount = 16;
+totalChapterSize = 3775677;
+},
+{
+cartoonId = 358;
+cartoonName = "\U5f71\U7075\U4f20\U8bf4";
+downloadStatus = 0;
+id = 11173;
+name = "\U7b2c5\U8bdd";
+priority = 6;
+readStatus = 0;
+status = 1;
+totalAlbumCount = 19;
+totalChapterSize = 4726717;
 }
 );
-categorys = "1,16";
+categorys = "1,23,4";
 collectionStatus = 0;
 commentCount = 0;
 commentList =         (
 );
 contentCount = 0;
-createTime = "2016-03-08 11:23:42";
+createTime = "2016-03-08 14:31:51";
 currentReadAlbumId = "";
 currentReadChapterId = "";
-id = 356;
-images = "http://7xkbpd.com2.z0.glb.qiniucdn.com/dc1b3a6fca18cc8e2f5945406d702010_23867.jpeg";
-introduction = "\U4e94\U8272\U70df";
-isOver = 1;
+id = 358;
+images = "http://7xkbpd.com2.z0.glb.qiniucdn.com/5725c3f5bf61b66a43b008bfe8c4d62f_29276.jpeg";
+introduction = "\U611f\U8c22\U4f5c\U8005\U5927\U5927\U7684\U6388\U6743\Uff0c(o\U309c\U03c9\U309co)\U261e \U6307\U8def\U4f5c\U8005\U541b\U5fae\U535ahttp://weibo.com/ZPF234";
+isOver = 0;
 level = 0;
-modifyTime = "2016-03-08 11:23:42";
-name = "\U4e94\U8272\U70df";
-priority = 9;
+modifyTime = "2016-03-08 14:31:51";
+name = "\U5f71\U7075\U4f20\U8bf4";
+priority = 8;
 readMode = 0;
 recentUpdateTime = "2016-03-08";
 remark = "";
 status = 1;
 thirdID = "";
 thirdUpdateTime = "";
-totalCartoonSize = 6490975;
-totalChapterCount = 1;
-updateInfo = "\U5df2\U5b8c\U7ed3";
-updateType = 6;
-updateValue = "";
-updateValueLabel = "\U5df2\U5b8c\U7ed3";
+totalCartoonSize = 28846546;
+totalChapterCount = 6;
+updateInfo = "\U66f4\U65b0\U81f3\U7b2c6\U8bdd";
+updateType = 1;
+updateValue = 2;
+updateValueLabel = "\U6bcf\U5468\U4e8c\U66f4\U65b0";
 userID = 52212;
 userIDInfo =         {
 id = 52212;

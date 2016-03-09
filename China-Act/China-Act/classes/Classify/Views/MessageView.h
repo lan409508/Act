@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CDetailModel.h"
 @interface MessageView : UIView
+
+@property (strong, nonatomic) CDetailModel *CDModel;
 
 @end

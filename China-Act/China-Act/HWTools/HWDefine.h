@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger,ClassifyListType) {
 //详情接口
 #define kCDetail @"http://api.playsm.com/index.php?size=12&r=cartoonCategory%2FgetCartoonSetListByCategory&page=1&"
 //内容接口
-#define kMessage @"http://api.playsm.com/index.php?r=cartoonSet%2Fdetail&id=356&"
+#define kMessage @"http://api.playsm.com/index.php?r=cartoonSet%2Fdetail&="
 //推荐滚动接口
 #define kRSCroll @"http://api.playsm.com/index.php?size=999&r=adImage%2Flist&customPosition=2&page=1&"
 //榜单接口
@@ -42,4 +42,9 @@ typedef NS_ENUM(NSInteger,ClassifyListType) {
 #define kAPPkey @"1748121094"
 #define kAppSecret @"146721be4d21f8e1756ec1fad00b4530"
 #define kRedirectURI @"https://api.weibo.com/oauth2/default.html"
+//微信分享
+#define kWeiXinAppkey @"wx6c5be7db818032d8"
+#define kWeiXinSecret @"d249cd8cb3ca0ead56569abd19a58df0"
+//bmob
+#define kBmonAppkey @"8cc30342f7f7a1b6d838e50a1f043c9b"
 #endif /* HWDefine_h */

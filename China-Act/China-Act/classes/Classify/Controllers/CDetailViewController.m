@@ -62,10 +62,10 @@ static NSString *itemIdentifier = @"itemIdentifier";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Classify" bundle:[NSBundle mainBundle]];                       MessageViewController *messageVC = [story instantiateViewControllerWithIdentifier:@"MessageVC"];
-//    CDetailModel *model = self.BigArray[indexPath.row];
-//    messageVC.messageId = model.Id;
-//    [self.navigationController pushViewController:messageVC animated:YES];
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Classify" bundle:[NSBundle mainBundle]];                       MessageViewController *messageVC = [story instantiateViewControllerWithIdentifier:@"messageVC"];
+    CDetailModel *model = self.BigArray[indexPath.row];
+    messageVC.messageId = model.Id;
+    [self.navigationController pushViewController:messageVC animated:YES];
     
 }
 

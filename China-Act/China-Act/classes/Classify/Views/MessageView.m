@@ -7,8 +7,11 @@
 //
 
 #import "MessageView.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation MessageView
+
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

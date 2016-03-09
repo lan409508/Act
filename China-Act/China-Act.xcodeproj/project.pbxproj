@@ -62,6 +62,13 @@
 		7AF45F221C8ECD8D0006F4D9 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF45F201C8ECD8D0006F4D9 /* MainTableViewCell.xib */; };
 		7AF45F241C8ED7080006F4D9 /* adDetail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AF45F231C8ED7080006F4D9 /* adDetail.plist */; };
 		7AF45F271C8F0E340006F4D9 /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF45F261C8F0E340006F4D9 /* MessageView.m */; };
+		7AF4C9791C901F470018CC0B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4C9781C901F470018CC0B /* LoginViewController.m */; };
+		7AF4C9821C902ECD0018CC0B /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF4C9811C902ECD0018CC0B /* login.storyboard */; };
+		7AF4C9861C9045DF0018CC0B /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4C9841C9045DF0018CC0B /* HeaderCollectionReusableView.m */; };
+		7AF4C9871C9045DF0018CC0B /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF4C9851C9045DF0018CC0B /* HeaderCollectionReusableView.xib */; };
+		7AF4C98A1C9047810018CC0B /* MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4C9891C9047810018CC0B /* MyCollectionViewCell.m */; };
+		7AF4C98D1C9059420018CC0B /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4C98C1C9059420018CC0B /* RegisterViewController.m */; };
+		7AF4C9901C9064500018CC0B /* passwordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4C98F1C9064500018CC0B /* passwordViewController.m */; };
 		7AFA230E1C890A7B00611185 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA230B1C890A7B00611185 /* ProgressHUD.bundle */; };
 		7AFA230F1C890A7B00611185 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFA230D1C890A7B00611185 /* ProgressHUD.m */; };
 		7AFA23111C8910C500611185 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA23101C8910C500611185 /* Main.storyboard */; };
@@ -167,6 +174,18 @@
 		7AF45F231C8ED7080006F4D9 /* adDetail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = adDetail.plist; sourceTree = "<group>"; };
 		7AF45F251C8F0E340006F4D9 /* MessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageView.h; sourceTree = "<group>"; };
 		7AF45F261C8F0E340006F4D9 /* MessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageView.m; sourceTree = "<group>"; };
+		7AF4C9771C901F470018CC0B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		7AF4C9781C901F470018CC0B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		7AF4C9811C902ECD0018CC0B /* login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
+		7AF4C9831C9045DF0018CC0B /* HeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		7AF4C9841C9045DF0018CC0B /* HeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		7AF4C9851C9045DF0018CC0B /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		7AF4C9881C9047810018CC0B /* MyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewCell.h; sourceTree = "<group>"; };
+		7AF4C9891C9047810018CC0B /* MyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewCell.m; sourceTree = "<group>"; };
+		7AF4C98B1C9059420018CC0B /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		7AF4C98C1C9059420018CC0B /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		7AF4C98E1C9064500018CC0B /* passwordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = passwordViewController.h; sourceTree = "<group>"; };
+		7AF4C98F1C9064500018CC0B /* passwordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = passwordViewController.m; sourceTree = "<group>"; };
 		7AFA230B1C890A7B00611185 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		7AFA230C1C890A7B00611185 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		7AFA230D1C890A7B00611185 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
@@ -333,6 +352,11 @@
 			isa = PBXGroup;
 			children = (
 				7AFA23141C89125000611185 /* Buy.storyboard */,
+				7AF4C9831C9045DF0018CC0B /* HeaderCollectionReusableView.h */,
+				7AF4C9841C9045DF0018CC0B /* HeaderCollectionReusableView.m */,
+				7AF4C9851C9045DF0018CC0B /* HeaderCollectionReusableView.xib */,
+				7AF4C9881C9047810018CC0B /* MyCollectionViewCell.h */,
+				7AF4C9891C9047810018CC0B /* MyCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -451,6 +475,12 @@
 			children = (
 				7AFA231E1C89132700611185 /* MyViewController.h */,
 				7AFA231F1C89132700611185 /* MyViewController.m */,
+				7AF4C9771C901F470018CC0B /* LoginViewController.h */,
+				7AF4C9781C901F470018CC0B /* LoginViewController.m */,
+				7AF4C98B1C9059420018CC0B /* RegisterViewController.h */,
+				7AF4C98C1C9059420018CC0B /* RegisterViewController.m */,
+				7AF4C98E1C9064500018CC0B /* passwordViewController.h */,
+				7AF4C98F1C9064500018CC0B /* passwordViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -465,6 +495,7 @@
 		7A4E86431C8875BE00B3C209 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7AF4C9811C902ECD0018CC0B /* login.storyboard */,
 				7AFA23161C89125D00611185 /* My.storyboard */,
 			);
 			path = Views;
@@ -655,9 +686,11 @@
 				7A4E85021C88597600B3C209 /* LaunchScreen.storyboard in Resources */,
 				7A1BE26A1C8ADFC300B60785 /* blueArrowDown.png in Resources */,
 				7A1BE2691C8ADFC300B60785 /* blueArrow.png in Resources */,
+				7AF4C9821C902ECD0018CC0B /* login.storyboard in Resources */,
 				7AF45ED91C8E8A1E0006F4D9 /* message.plist in Resources */,
 				7AFA23461C8995EF00611185 /* ad.plist in Resources */,
 				7AFA23131C89123E00611185 /* Classify.storyboard in Resources */,
+				7AF4C9871C9045DF0018CC0B /* HeaderCollectionReusableView.xib in Resources */,
 				7A1BE2571C8A872D00B60785 /* detail.plist in Resources */,
 				7AF45ECE1C8E7AAA0006F4D9 /* ghjk.plist in Resources */,
 				7A1BE2711C8AEDA200B60785 /* category.plist in Resources */,
@@ -729,13 +762,16 @@
 			files = (
 				7AFA231A1C89131300611185 /* ClassifyViewController.m in Sources */,
 				7AFA23491C89C95600611185 /* HWtools.m in Sources */,
+				7AF4C9791C901F470018CC0B /* LoginViewController.m in Sources */,
 				7A1BE26D1C8ADFC300B60785 /* VOIndicatorAnimation.m in Sources */,
 				7A1BE26F1C8ADFC300B60785 /* VOSegmentedControl.m in Sources */,
 				7AF45EC91C8E6DCD0006F4D9 /* UIViewController+Common.m in Sources */,
 				7AF45ED41C8E7D140006F4D9 /* CDetailModel.m in Sources */,
 				7AF45F211C8ECD8D0006F4D9 /* MainTableViewCell.m in Sources */,
 				7AF45ED71C8E884D0006F4D9 /* MessageViewController.m in Sources */,
+				7AF4C9861C9045DF0018CC0B /* HeaderCollectionReusableView.m in Sources */,
 				7A4E84FD1C88597600B3C209 /* AppDelegate.m in Sources */,
+				7AF4C98D1C9059420018CC0B /* RegisterViewController.m in Sources */,
 				7AFA23201C89132700611185 /* MyViewController.m in Sources */,
 				7A1BE26B1C8ADFC300B60785 /* PullingRefreshTableView.m in Sources */,
 				7AF45F271C8F0E340006F4D9 /* MessageView.m in Sources */,
@@ -745,8 +781,10 @@
 				7A1BE26C1C8ADFC300B60785 /* VOContentLayer.m in Sources */,
 				7AFA231D1C89131E00611185 /* BuyViewController.m in Sources */,
 				7A4E84FA1C88597600B3C209 /* main.m in Sources */,
+				7AF4C9901C9064500018CC0B /* passwordViewController.m in Sources */,
 				7A4E86461C88760A00B3C209 /* MainViewController.m in Sources */,
 				7AF45ED11C8E7CD40006F4D9 /* CDetailCollectionReusableView.m in Sources */,
+				7AF4C98A1C9047810018CC0B /* MyCollectionViewCell.m in Sources */,
 				7A5038EA1C8D9E7D001DAB2F /* RecommentModel.m in Sources */,
 				7A1BE25A1C8A8B8B00B60785 /* DetailView.m in Sources */,
 				7A1BE26E1C8ADFC300B60785 /* VOSegment.m in Sources */,

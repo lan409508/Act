@@ -71,7 +71,7 @@
 
 - (PullingRefreshTableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[PullingRefreshTableView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight - 44) pullingDelegate:self];
+        self.tableView = [[PullingRefreshTableView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight) pullingDelegate:self];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
     }

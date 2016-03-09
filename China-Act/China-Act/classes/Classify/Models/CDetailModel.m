@@ -17,6 +17,10 @@
         self.introduction = dataDic[@"introduction"];
         self.name = dataDic[@"name"];
         self.updateInfo = dataDic[@"updateInfo"];
+        self.cartoonId = dataDic[@"cartoonId"];
+        self.author = dataDic[@"author"];
+        self.recentUpdateTime = dataDic[@"recentUpdateTime"];
+        self.updateValueLabel = dataDic[@"updateValueLabel"];
     }
     return self;
 }
