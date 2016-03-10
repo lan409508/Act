@@ -12,8 +12,11 @@
 #import "MainModel.h"
 @interface DetailViewController ()
 
+@property (nonatomic, strong) UIWebView *webView;
+
 @property (nonatomic, strong) NSMutableArray *listArray;
 @property (nonatomic, strong) UIScrollView *scrollView;
+
 
 @end
 
@@ -23,45 +26,47 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor redColor];
-    [self.view addSubview:self.scrollView];
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self showBackBtn];
-    [self getModel];
+    
+    if (self.judg == YES) {
+        [self getDetailHtml:self.detailId];
+    }else {
+    [self getDetailUrl:self.detailId];
+    }
+    
     
 }
 
-- (void)getModel{
-    AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
-    sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [sessionManager GET:[NSString stringWithFormat:@"%@&id=%@",kDetail,self.detailId] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = responseObject;
-        NSString *error = dic[@"error"];
-//        NSString *rType = dic[@"r"];
-        NSInteger code = [dic[@"code"] integerValue];
-        if ([error isEqualToString:@""] && code == 0) {
-            NSArray *dataArray = dic[@"results"];
-            for (NSDictionary *dict in dataArray) {
-                self.navigationItem.title = dict[@"title"];
-                [self.listArray addObject:dict[@"shareUrl"]];
-                
-            }
-        }
-//        [self.scrollView  ];
-//        [self.scrollView addSubview:<#(nonnull UIView *)#>];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-    }];
+-(void)getDetailHtml:(NSString *)hrml{
+
+    [self.webView loadHTMLString:hrml baseURL:nil];
+
 }
 
-- (UIScrollView *)scrollView {
-    if (_scrollView == nil) {
-        self.scrollView = [[UIScrollView alloc] init];
-        self.scrollView.contentSize = CGSizeMake(kWidth, 2000);
-    }
-    return _scrollView;
+-(void)getDetailUrl:(NSString *)url{
+
+    NSURL *str = [NSURL URLWithString:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:str];
+    [self.webView loadRequest:request];
+    
+
 }
+
+-(UIWebView *)webView{
+
+    if (_webView == nil) {
+        self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 65, kWidth, kHeight - 100)];
+        self.webView.backgroundColor = [UIColor clearColor];
+        self.webView.opaque = NO;
+        self.webView.dataDetectorTypes = UIDataDetectorTypeAll;
+        [self.view addSubview:self.webView];
+        
+        
+    }
+    return _webView;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -70,7 +70,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.titleArray.count;
+    return 4;
 }
 
 #pragma mark -------- UITableViewDelegate
@@ -248,7 +248,7 @@
     
     //QQ
     UIButton *qqBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    qqBtn.frame = CGRectMake(40, 100, 70, 70);
+    qqBtn.frame = CGRectMake(kWidth * 8/75, 100, 70, 70);
     [self.shareView addSubview:qqBtn];
     
     //qq空间
@@ -279,7 +279,12 @@
 }
 
 - (void)friend {
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.text = @"这是测试发送的内容。";
+    req.bText = YES;
+    req.scene = WXSceneSession;
     
+    [WXApi sendReq:req];
 }
 
 - (void)remove {

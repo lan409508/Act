@@ -10,6 +10,7 @@
 #import "WeiboSDK.h"
 #import "WXApi.h"
 #import <BmobSDK/Bmob.h>
+#import <BmobSDK/BmobSMS.h>
 @interface AppDelegate ()<WeiboSDKDelegate,WXApiDelegate>
 
 @end
@@ -32,6 +33,8 @@
     //新浪微博注册
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:kAPPkey];
+    [Bmob registerWithAppKey:kBmonAppkey];
+    
     //微信注册
     [WXApi registerApp:kWeiXinAppkey];
     
@@ -92,11 +95,18 @@
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    if ([WeiboSDK isCanSSOInWeiboApp]) {
+        return [WeiboSDK handleOpenURL:url delegate:self];
+    }
+    
     return [WXApi handleOpenURL:url delegate:self];
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-    return [WeiboSDK handleOpenURL:url delegate:self];
+    if ([WeiboSDK isCanSSOInWeiboApp]) {
+        return [WeiboSDK handleOpenURL:url delegate:self];
+    }
+
     return [WXApi handleOpenURL:url delegate:self];
 }
 

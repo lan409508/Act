@@ -118,7 +118,7 @@
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DetailViewController *detailVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"DetailVC"];
 //    DetailViewController *detailVC = [[DetailViewController alloc]init];
-    detailVC.detailId = mainModel.ID;
+    detailVC.detailId = mainModel.share;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
@@ -220,8 +220,8 @@
         UIButton *touchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         touchBtn.frame = imageView.frame;
         touchBtn.tag = 100 + i;
-        [touchBtn addTarget:self action:@selector(adAction:) forControlEvents:UIControlEventTouchUpInside];
-        [imageView addSubview:touchBtn];
+        [touchBtn addTarget:self action:@selector(touchAdvertisement:) forControlEvents:UIControlEventTouchUpInside];
+        [self.scrollView addSubview:touchBtn];
         [self.scrollView addSubview:imageView];
         [self.scrollView addSubview:titleLabel];
     
@@ -268,10 +268,12 @@
     self.scrollView.contentOffset = CGPointMake(pageNumber * pageWidth, 0);
 }
 
-- (void)adAction:(UIButton *)btn {
-//    NSString *url = self.adArray[btn.tag - 100][@"shareUrl"];
+- (void)touchAdvertisement:(UIButton *)btn {
     DetailViewController *detailVC = [[DetailViewController alloc] init];
-    detailVC.detailId = self.adArray[btn.tag - 100][@"id"];
+    MainModel *model = self.adArray[btn.tag-100];
+    detailVC.detailId = model.content;
+    NSLog(@"%@",model.content);
+    detailVC.judg = YES;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

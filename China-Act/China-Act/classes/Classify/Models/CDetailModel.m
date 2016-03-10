@@ -21,6 +21,9 @@
         self.author = dataDic[@"author"];
         self.recentUpdateTime = dataDic[@"recentUpdateTime"];
         self.updateValueLabel = dataDic[@"updateValueLabel"];
+        self.chapterId = dataDic[@"chapterId"];
+        self.width = dataDic[@"imgWidth"];
+        self.height = dataDic[@"imgHeight"];
     }
     return self;
 }

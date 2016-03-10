@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface RegisterViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *phoneTF;
+@property (weak, nonatomic) IBOutlet UITextField *yanzhengTF;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTF;
+- (IBAction)huoquyanzhengBtn:(id)sender;
+- (IBAction)registerBtn:(id)sender;
+
+
 
 @end

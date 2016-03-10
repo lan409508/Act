@@ -8,11 +8,13 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import <BmobSDK/BmobUser.h>
 @interface LoginViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;
-@property (weak, nonatomic) IBOutlet UIButton *deluBtn;
+- (IBAction)dengluBtn:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UIButton *zhuceBtn;
 @property (weak, nonatomic) IBOutlet UIButton *wangjiBtn;
 
@@ -47,6 +49,18 @@
     
 }
 
+//点击页面空白处回收键盘
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    //第一种方式
+    //    [self.userNameTF resignFirstResponder];
+    //    [self.passwordTF resignFirstResponder];
+    //    [self.confirmPassTF resignFirstResponder];
+    //    [self.meilTF resignFirstResponder];
+    
+    //第二种方式
+    [self.view endEditing:YES];
+}
+
 //- (void)ZhuceAction {
 //    RegisterViewController *registerVC = [[RegisterViewController alloc] init];
 //    [self.navigationController pushViewController:registerVC animated:YES];
@@ -72,4 +86,17 @@
 }
 */
 
+- (IBAction)dengluBtn:(id)sender {
+    [BmobUser loginWithUsernameInBackground:self.phoneTF.text password:self.passwordTF.text block:^(BmobUser *user, NSError *error) {
+        if (user) {
+            LXJLog(@"登录成功");
+        } else {
+            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:@"用户名或密码不正确" preferredStyle:UIAlertControllerStyleActionSheet];
+            [self presentViewController:alertVC animated:NO completion:^{
+                
+            }];
+            LXJLog(@"登录失败");
+        }
+    }];
+}
 @end

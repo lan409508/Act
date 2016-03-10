@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSString *params;
 @property (nonatomic, strong) NSString *share;
 @property (nonatomic, strong) NSString *ID;
+@property (nonatomic, strong) NSString *content;
 
 -(instancetype)initWithDictonary:(NSDictionary *)dict rType:(NSString *)rType;
 

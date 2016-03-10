@@ -19,6 +19,10 @@
 @property (nonatomic, strong) NSString *cartoonId;
 @property (nonatomic, strong) NSString *recentUpdateTime;
 @property (nonatomic, strong) NSString *updateValueLabel;
+@property (nonatomic, strong) NSString *chapterId;
+@property (nonatomic, strong) NSString *width;
+@property (nonatomic, strong) NSString *height;
+
 - (instancetype)initWithDictionary:(NSDictionary *)dataDic;
 
 @end

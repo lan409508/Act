@@ -9,7 +9,6 @@
 #import "CDetailViewController.h"
 #import "UIViewController+Common.h"
 #import "CDetailModel.h"
-#import "CDetailCollectionReusableView.h"
 #import <AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "ClassifyViewController.h"
@@ -23,6 +22,9 @@ static NSString *itemIdentifier = @"itemIdentifier";
 @property (nonatomic, strong) UICollectionViewFlowLayout *layout;
 @property (nonatomic, strong) NSMutableArray *BigArray;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) UIImageView *imageV;
+@property (nonatomic, strong) UILabel *updateInfoLabel;
+@property (nonatomic, strong) UILabel *titleLabel;
 
 @end
 
@@ -44,20 +46,20 @@ static NSString *itemIdentifier = @"itemIdentifier";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:itemIdentifier forIndexPath:indexPath];
     CDetailModel *model = self.BigArray[indexPath.row];
-    UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.layout.itemSize.width, self.layout.itemSize.height - 30)];
-    [imageV sd_setImageWithURL:[NSURL URLWithString:model.images] placeholderImage:nil];
-    UILabel *updateInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 115, self.layout.itemSize.width, 20)];
-    updateInfoLabel.text = model.updateInfo;
-    updateInfoLabel.font = [UIFont systemFontOfSize:14.0];
-    updateInfoLabel.textColor = [UIColor whiteColor];
-    updateInfoLabel.textAlignment = NSTextAlignmentLeft;
-    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 65, self.layout.itemSize.width, self.layout.itemSize.height)];
-    titleLabel.text = model.name;
-    titleLabel.font = [UIFont systemFontOfSize:14.0];
-    titleLabel.textAlignment = NSTextAlignmentLeft;
-    [cell addSubview:imageV];
-    [cell addSubview:titleLabel];
-    [cell addSubview:updateInfoLabel];
+    self.imageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.layout.itemSize.width, self.layout.itemSize.height - 30)];
+    [self.imageV sd_setImageWithURL:[NSURL URLWithString:model.images] placeholderImage:nil];
+    self.updateInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 115, self.layout.itemSize.width, 20)];
+    self.updateInfoLabel.text = model.updateInfo;
+    self.updateInfoLabel.font = [UIFont systemFontOfSize:14.0];
+    self.updateInfoLabel.textColor = [UIColor whiteColor];
+    self.updateInfoLabel.textAlignment = NSTextAlignmentLeft;
+    self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 65, self.layout.itemSize.width, self.layout.itemSize.height)];
+    self.titleLabel.text = model.name;
+    self.titleLabel.font = [UIFont systemFontOfSize:14.0];
+    self.titleLabel.textAlignment = NSTextAlignmentLeft;
+    [cell addSubview:self.imageV];
+    [cell addSubview:self.titleLabel];
+    [cell addSubview:self.updateInfoLabel];
     return cell;
 }
 
@@ -95,10 +97,10 @@ static NSString *itemIdentifier = @"itemIdentifier";
         self.layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         self.layout.minimumInteritemSpacing = 1;
         self.layout.minimumLineSpacing = 1;
-        self.layout.headerReferenceSize = CGSizeMake(kWidth, 40);
-        self.layout.footerReferenceSize = CGSizeMake(kWidth, 40);
-        self.layout.itemSize = CGSizeMake(123, kHeight / 4);
-        self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:self.layout];
+        self.layout.headerReferenceSize = CGSizeMake(kWidth, (kWidth * 6/75));
+        self.layout.footerReferenceSize = CGSizeMake(kWidth, (kWidth * 6/75));
+        self.layout.itemSize = CGSizeMake((kWidth * 118/375), kHeight / 4);
+        self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake((kWidth * 1/75), 0, kWidth - (kWidth * 3/75), kHeight - (kHeight * 3/75)) collectionViewLayout:self.layout];
         self.collectionView.backgroundColor = [UIColor clearColor];
         self.collectionView.allowsMultipleSelection = YES;
         self.collectionView.dataSource = self;

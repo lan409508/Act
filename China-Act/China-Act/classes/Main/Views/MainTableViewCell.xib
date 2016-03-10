@@ -19,7 +19,7 @@
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="山治君是我没错" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjj-Bk-ucA">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="山治君是我没错" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjj-Bk-ucA">
                         <rect key="frame" x="161" y="87" width="103" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.88594933712121215" green="0.59131952403177446" blue="0.56665128317604052" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,7 +32,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="brg-K1-pfl">
-                        <rect key="frame" x="8" y="9" width="145" height="100"/>
+                        <rect key="frame" x="8" y="10" width="145" height="100"/>
                     </imageView>
                 </subviews>
             </tableViewCellContentView>

@@ -8,7 +8,11 @@
 
 #import "passwordViewController.h"
 #import "UIViewController+Common.h"
-@interface passwordViewController ()
+@interface passwordViewController ()<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *phoneTF;
+@property (weak, nonatomic) IBOutlet UITextField *yanzhengmaTF;
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
+
 
 @end
 
@@ -18,6 +22,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self showBackBtn];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,5 +42,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

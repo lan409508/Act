@@ -11,5 +11,6 @@
 @interface DetailViewController : UIViewController
 
 @property (nonatomic, strong) NSString *detailId;
+@property (nonatomic, assign) BOOL judg;
 
 @end

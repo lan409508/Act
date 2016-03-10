@@ -32,12 +32,17 @@ typedef NS_ENUM(NSInteger,ClassifyListType) {
 #define kCDetail @"http://api.playsm.com/index.php?size=12&r=cartoonCategory%2FgetCartoonSetListByCategory&page=1&"
 //内容接口
 #define kMessage @"http://api.playsm.com/index.php?r=cartoonSet%2Fdetail&="
+//漫画接口
+#define kManhua @"http://api.playsm.com/index.php?size=10&orderType=1&r=cartoonChapter%2FalbumList&page=1&isSize=1&"
 //推荐滚动接口
 #define kRSCroll @"http://api.playsm.com/index.php?size=999&r=adImage%2Flist&customPosition=2&page=1&"
 //榜单接口
 #define kList @"http://api.playsm.com/index.php?size=10&r=cartoonBillBoard%2Flist&page=1&"
 //类别接口
 #define kCategory @"http://api.playsm.com/index.php?size=999&r=cartoonCategory%2Flist&page=1&"
+//美图接口
+#define kPicture @"http://api.playsm.com/index.php?lastCount=16&r=prettyImages%2Flist&page=1"
+//searchLabel=P%E7%AB%99&
 //新浪微博分享
 #define kAPPkey @"1748121094"
 #define kAppSecret @"146721be4d21f8e1756ec1fad00b4530"

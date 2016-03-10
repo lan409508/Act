@@ -54,18 +54,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90u-tq-wys" customClass="DetailView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90u-tq-wys" customClass="DetailView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yRx-5o-Fl8">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yRx-5o-Fl8">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="yRx-5o-Fl8" secondAttribute="trailing" id="AdY-zQ-Tv6"/>
+                                    <constraint firstItem="yRx-5o-Fl8" firstAttribute="top" secondItem="90u-tq-wys" secondAttribute="top" id="h5s-er-vqj"/>
+                                    <constraint firstAttribute="bottom" secondItem="yRx-5o-Fl8" secondAttribute="bottom" id="jIp-eV-dYQ"/>
+                                    <constraint firstItem="yRx-5o-Fl8" firstAttribute="leading" secondItem="90u-tq-wys" secondAttribute="leading" id="vVT-re-53p"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="90u-tq-wys" secondAttribute="trailing" id="VIR-fw-iZL"/>
+                            <constraint firstItem="90u-tq-wys" firstAttribute="bottom" secondItem="5bP-fL-XA3" secondAttribute="top" id="gR9-zm-ZTM"/>
+                            <constraint firstItem="90u-tq-wys" firstAttribute="top" secondItem="o4J-Kh-73c" secondAttribute="top" id="ua1-MZ-yFA"/>
+                            <constraint firstItem="90u-tq-wys" firstAttribute="leading" secondItem="o4J-Kh-73c" secondAttribute="leading" id="viQ-pm-qLs"/>
+                        </constraints>
                         <connections>
                             <outlet property="scrollView" destination="yRx-5o-Fl8" id="jKA-8K-Tio"/>
                         </connections>

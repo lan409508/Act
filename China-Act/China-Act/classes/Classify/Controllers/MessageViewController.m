@@ -11,6 +11,8 @@
 #import "CDetailModel.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "MessageDetailViewController.h"
+
 static NSString *itemIdentifier = @"itemIdentifier";
 static NSString *headerIdentifier = @"headerIdentifier";
 
@@ -47,13 +49,21 @@ static NSString *headerIdentifier = @"headerIdentifier";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:itemIdentifier forIndexPath:indexPath];
-    CDetailModel *model = self.numberArray[indexPath.row];
+//    CDetailModel *model = self.numberArray[indexPath.row];
     UILabel *numLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.layout.itemSize.width, self.layout.itemSize.height)];
-    numLabel.text = model.name;
+    numLabel.text = [NSString stringWithFormat:@"%ld话",indexPath.row];
     numLabel.textAlignment = NSTextAlignmentCenter;
     numLabel.textColor = [UIColor lightGrayColor];
     [cell addSubview:numLabel];
     return cell;
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    MessageDetailViewController *messVC = [MessageDetailViewController alloc];
+    CDetailModel *model = self.numberArray[indexPath.row];
+    messVC.MeDId = model.Id;
+    [self.navigationController pushViewController:messVC animated:YES];
 }
 
 - (void)getModel {
@@ -71,6 +81,7 @@ static NSString *headerIdentifier = @"headerIdentifier";
                 CDetailModel *numModel = [[CDetailModel alloc] initWithDictionary:numDic];
                 [self.numberArray addObject:numModel];
             }
+          
             CDetailModel *model = [[CDetailModel alloc] initWithDictionary:dict];
             [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.images] placeholderImage:nil];
             self.titleLabel.text = model.name;

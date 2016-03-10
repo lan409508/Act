@@ -27,6 +27,7 @@
         else if ([self.QuFen isEqualToString:@"adImage/list"]){
             self.adImage = dict[@"images"];
             self.adTitle = dict[@"title"];
+            self.content = dict[@"messageinfo"][@"content"];
         }
     }
     return self;

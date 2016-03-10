@@ -50,7 +50,7 @@
     UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.layout.itemSize.width, self.layout.itemSize.height)];
     [imageV sd_setImageWithURL:[NSURL URLWithString:model.image] placeholderImage:nil];
     imageV.layer.masksToBounds = YES;
-    imageV.layer.cornerRadius = 55.0;
+    imageV.layer.cornerRadius = kWidth * 11/75;
     self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 65, self.layout.itemSize.width, self.layout.itemSize.height)];
     self.titleLabel.text = model.title;
     self.titleLabel.font = [UIFont systemFontOfSize:13.0];
@@ -100,10 +100,10 @@
         self.layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         self.layout.minimumLineSpacing = 25;
         self.layout.minimumInteritemSpacing = 1;
-        self.layout.headerReferenceSize = CGSizeMake(kWidth, 40);
-        self.layout.footerReferenceSize = CGSizeMake(kWidth, 40);
-        self.layout.itemSize = CGSizeMake(110, 110);
-        self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:self.layout];
+        self.layout.headerReferenceSize = CGSizeMake(kWidth, kWidth *8/75);
+        self.layout.footerReferenceSize = CGSizeMake(kWidth, kWidth *8/75);
+        self.layout.itemSize = CGSizeMake(kWidth * 22/75, kWidth * 23/75);
+        self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(5, 0, kWidth - (kWidth * 3/75), kHeight - (kHeight * 3/75)) collectionViewLayout:self.layout];
         self.collectionView.backgroundColor = [UIColor clearColor];
         self.collectionView.allowsMultipleSelection = YES;
         self.collectionView.dataSource = self;
