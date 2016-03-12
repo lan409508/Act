@@ -70,7 +70,6 @@
 		7AF4C9791C901F470018CC0B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4C9781C901F470018CC0B /* LoginViewController.m */; };
 		7AF4C9821C902ECD0018CC0B /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF4C9811C902ECD0018CC0B /* login.storyboard */; };
 		7AF4C98D1C9059420018CC0B /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4C98C1C9059420018CC0B /* RegisterViewController.m */; };
-		7AF4C9901C9064500018CC0B /* passwordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4C98F1C9064500018CC0B /* passwordViewController.m */; };
 		7AF794B51C924BA0007F634B /* AoiroSoraLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF794B21C924BA0007F634B /* AoiroSoraLayout.m */; };
 		7AF794B61C924BA0007F634B /* BLImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF794B41C924BA0007F634B /* BLImageSize.m */; };
 		7AF794B91C924C94007F634B /* PictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF794B81C924C94007F634B /* PictureViewController.m */; };
@@ -96,6 +95,7 @@
 		7AF795401C927FA0007F634B /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7952D1C927FA0007F634B /* UIView+MJExtension.m */; };
 		7AF795471C9297F5007F634B /* PictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF795451C9297F5007F634B /* PictureCollectionViewCell.m */; };
 		7AF795481C9297F5007F634B /* PictureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF795461C9297F5007F634B /* PictureCollectionViewCell.xib */; };
+		7AF8936B1C940BC000F212A4 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF8936A1C940BC000F212A4 /* ReadViewController.m */; };
 		7AFA230E1C890A7B00611185 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA230B1C890A7B00611185 /* ProgressHUD.bundle */; };
 		7AFA230F1C890A7B00611185 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFA230D1C890A7B00611185 /* ProgressHUD.m */; };
 		7AFA23111C8910C500611185 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AFA23101C8910C500611185 /* Main.storyboard */; };
@@ -214,8 +214,6 @@
 		7AF4C9811C902ECD0018CC0B /* login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		7AF4C98B1C9059420018CC0B /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		7AF4C98C1C9059420018CC0B /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		7AF4C98E1C9064500018CC0B /* passwordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = passwordViewController.h; sourceTree = "<group>"; };
-		7AF4C98F1C9064500018CC0B /* passwordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = passwordViewController.m; sourceTree = "<group>"; };
 		7AF794B11C924BA0007F634B /* AoiroSoraLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AoiroSoraLayout.h; sourceTree = "<group>"; };
 		7AF794B21C924BA0007F634B /* AoiroSoraLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AoiroSoraLayout.m; sourceTree = "<group>"; };
 		7AF794B31C924BA0007F634B /* BLImageSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLImageSize.h; sourceTree = "<group>"; };
@@ -264,6 +262,8 @@
 		7AF795441C9297F5007F634B /* PictureCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureCollectionViewCell.h; sourceTree = "<group>"; };
 		7AF795451C9297F5007F634B /* PictureCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionViewCell.m; sourceTree = "<group>"; };
 		7AF795461C9297F5007F634B /* PictureCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureCollectionViewCell.xib; sourceTree = "<group>"; };
+		7AF893691C940BC000F212A4 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
+		7AF8936A1C940BC000F212A4 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		7AFA230B1C890A7B00611185 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		7AFA230C1C890A7B00611185 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		7AFA230D1C890A7B00611185 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
@@ -466,6 +466,8 @@
 				7AF45ED61C8E884D0006F4D9 /* MessageViewController.m */,
 				7AF3F3C11C914B69008D41D1 /* MessageDetailViewController.h */,
 				7AF3F3C21C914B69008D41D1 /* MessageDetailViewController.m */,
+				7AF893691C940BC000F212A4 /* ReadViewController.h */,
+				7AF8936A1C940BC000F212A4 /* ReadViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -566,8 +568,6 @@
 				7AF4C9781C901F470018CC0B /* LoginViewController.m */,
 				7AF4C98B1C9059420018CC0B /* RegisterViewController.h */,
 				7AF4C98C1C9059420018CC0B /* RegisterViewController.m */,
-				7AF4C98E1C9064500018CC0B /* passwordViewController.h */,
-				7AF4C98F1C9064500018CC0B /* passwordViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -988,13 +988,13 @@
 				7A1BE26C1C8ADFC300B60785 /* VOContentLayer.m in Sources */,
 				7AFA231D1C89131E00611185 /* BuyViewController.m in Sources */,
 				7A4E84FA1C88597600B3C209 /* main.m in Sources */,
-				7AF4C9901C9064500018CC0B /* passwordViewController.m in Sources */,
 				7A4E86461C88760A00B3C209 /* MainViewController.m in Sources */,
 				7A5038EA1C8D9E7D001DAB2F /* RecommentModel.m in Sources */,
 				7A1BE25A1C8A8B8B00B60785 /* DetailView.m in Sources */,
 				7AF3F3C71C919699008D41D1 /* CDetailCollectionViewCell.m in Sources */,
 				7AF794B91C924C94007F634B /* PictureViewController.m in Sources */,
 				7AF795321C927FA0007F634B /* MJRefreshHeader.m in Sources */,
+				7AF8936B1C940BC000F212A4 /* ReadViewController.m in Sources */,
 				7AF795381C927FA0007F634B /* MJRefreshBackStateFooter.m in Sources */,
 				7AF7953A1C927FA0007F634B /* MJRefreshNormalHeader.m in Sources */,
 				7A1BE26E1C8ADFC300B60785 /* VOSegment.m in Sources */,

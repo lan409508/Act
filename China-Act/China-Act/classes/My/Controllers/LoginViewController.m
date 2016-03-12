@@ -14,9 +14,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;
 - (IBAction)dengluBtn:(id)sender;
-
 @property (weak, nonatomic) IBOutlet UIButton *zhuceBtn;
-@property (weak, nonatomic) IBOutlet UIButton *wangjiBtn;
+
 
 
 
@@ -92,11 +91,22 @@
         if (user) {
             LXJLog(@"登录成功");
         } else {
-            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:@"用户名或密码不正确" preferredStyle:UIAlertControllerStyleActionSheet];
-            [self presentViewController:alertVC animated:NO completion:^{
+            UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"哎呀呀" message:@"好像没网了哎..." preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"再试试" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                self.phoneTF.text = nil;
+                self.passwordTF.text = nil;
                 
             }];
-            LXJLog(@"登录失败");
+            UIAlertAction *defaultAction1 = [UIAlertAction actionWithTitle:@"转身离开" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            
+            [alert addAction:defaultAction];
+            [alert addAction:defaultAction1];
+            [self presentViewController:alert animated:YES completion:nil];
+            
         }
     }];
 }

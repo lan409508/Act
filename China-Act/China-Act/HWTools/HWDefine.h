@@ -34,6 +34,8 @@ typedef NS_ENUM(NSInteger,ClassifyListType) {
 #define kMessage @"http://api.playsm.com/index.php?r=cartoonSet%2Fdetail&="
 //漫画接口
 #define kManhua @"http://api.playsm.com/index.php?size=10&orderType=1&r=cartoonChapter%2FalbumList&page=1&isSize=1&"
+//
+#define kRead @"http://api.playsm.com/index.php?size=10&orderType=1&r=cartoonChapter%2FalbumList&isSize=1&"
 //推荐滚动接口
 #define kRSCroll @"http://api.playsm.com/index.php?size=999&r=adImage%2Flist&customPosition=2&page=1&"
 //榜单接口

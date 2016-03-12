@@ -81,7 +81,7 @@
 
 - (UIScrollView *)scrollView{
     if (_scrollView == nil) {
-        self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kWidth, 160)];
+        self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight * 1/4)];
         self.scrollView.contentSize = CGSizeMake(kWidth * self.adArray.count, 130);
         self.scrollView.pagingEnabled = YES;
         self.scrollView.showsHorizontalScrollIndicator = NO;
@@ -91,7 +91,7 @@
 }
 - (UIPageControl *)pageControl{
     if (_pageControl == nil) {
-        self.pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(260, 130, 100, 30)];
+        self.pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(kWidth *1/2, kHeight *150/667, kWidth *100/375, kWidth *10/375)];
         self.pageControl.pageIndicatorTintColor = [UIColor whiteColor];
         self.pageControl.currentPageIndicatorTintColor = [UIColor redColor];
         [self.pageControl addTarget:self action:@selector(pageSelect:) forControlEvents:UIControlEventValueChanged];
@@ -118,7 +118,6 @@
     MainModel *mainModel = self.listArray[indexPath.row];
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DetailViewController *detailVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"DetailVC"];
-//    DetailViewController *detailVC = [[DetailViewController alloc]init];
     detailVC.detailId = mainModel.share;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
@@ -169,7 +168,7 @@
 
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-   [sessionManager GET:[NSString stringWithFormat:@"%@page=%ld",kMain,_pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+   [sessionManager GET:[NSString stringWithFormat:@"%@page=%ld",kMain,(long)_pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
 //       NSLog(@"%@",downloadProgress);
    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
        NSDictionary *dic = responseObject;
@@ -208,26 +207,22 @@
 
 
 - (void)HeaderTableView {
-    self.headerTableView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWidth, 160)];
+    self.headerTableView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight * 1/4)];
     [self.headerTableView addSubview:self.scrollView];
     self.pageControl.numberOfPages = self.adArray.count;
     [self.headerTableView addSubview:self.pageControl];
     for (int i = 0; i < self.adArray.count; i++) {
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(kWidth * i, 0, kWidth, 170)];
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(kWidth * i, 0, self.headerTableView.frame.size.width, self.headerTableView.frame.size.height)];
         MainModel *model = self.adArray[i];
         [imageView sd_setImageWithURL:[NSURL URLWithString:model.adImage] placeholderImage:nil];
         imageView.userInteractionEnabled = YES;
-        UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(kWidth * i, 130, 250, 30)];
-        titleLabel.text = model.adTitle;
-        titleLabel.font = [UIFont systemFontOfSize:14.0];
-        titleLabel.textColor = [UIColor whiteColor];
+
         UIButton *touchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        touchBtn.frame = imageView.frame;
+        touchBtn.frame = CGRectMake(0, 0, imageView.frame.size.width, imageView.frame.size.height);
         touchBtn.tag = 100 + i;
         [touchBtn addTarget:self action:@selector(touchAdvertisement:) forControlEvents:UIControlEventTouchUpInside];
-        [self.scrollView addSubview:touchBtn];
+        [imageView addSubview:touchBtn];
         [self.scrollView addSubview:imageView];
-        [self.scrollView addSubview:titleLabel];
     
     }
     self.tableView.tableHeaderView = self.headerTableView;
@@ -277,7 +272,6 @@
     DetailViewController *detailVC = [[DetailViewController alloc] init];
     MainModel *model = self.adArray[btn.tag-100];
     detailVC.detailId = model.content;
-    NSLog(@"%@",model.content);
     detailVC.judg = YES;
     [self.navigationController pushViewController:detailVC animated:YES];
 }

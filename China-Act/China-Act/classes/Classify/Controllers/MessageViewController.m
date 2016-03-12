@@ -12,6 +12,7 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MessageDetailViewController.h"
+#import "ReadViewController.h"
 
 static NSString *itemIdentifier = @"itemIdentifier";
 static NSString *headerIdentifier = @"headerIdentifier";
@@ -23,7 +24,10 @@ static NSString *headerIdentifier = @"headerIdentifier";
 @property (weak, nonatomic) IBOutlet UILabel *updateTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *zuijingengxin;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
-@property (nonatomic, strong) UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+- (IBAction)readBtn:(id)sender;
+
+//@property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UICollectionView *headerCollectionView;
 @property (nonatomic, strong) UICollectionViewFlowLayout *layout;
 @property (strong, nonatomic) NSMutableArray *dataAry;
@@ -40,6 +44,18 @@ static NSString *headerIdentifier = @"headerIdentifier";
     // Do any additional setup after loading the view.
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:250/255.0 green:150/255.0 blue:160/255.0 alpha:1.0];
+    self.layout = [[UICollectionViewFlowLayout alloc] init];
+    self.layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    self.layout.minimumInteritemSpacing = 1;
+    self.layout.minimumLineSpacing = 3;
+    self.layout.footerReferenceSize = CGSizeMake(kWidth, 60);
+    self.layout.itemSize = CGSizeMake(80, 40);
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    self.collectionView.allowsMultipleSelection = YES;
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:itemIdentifier];
+    [self.view addSubview:self.collectionView];
     [self getModel];
     [self showBackBtn];
 }
@@ -50,9 +66,8 @@ static NSString *headerIdentifier = @"headerIdentifier";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:itemIdentifier forIndexPath:indexPath];
-//    CDetailModel *model = self.numberArray[indexPath.row];
     UILabel *numLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.layout.itemSize.width, self.layout.itemSize.height)];
-    numLabel.text = [NSString stringWithFormat:@"%ld话",indexPath.row];
+    numLabel.text = [NSString stringWithFormat:@"%d话",indexPath.row + 1];
     numLabel.textAlignment = NSTextAlignmentCenter;
     numLabel.textColor = [UIColor lightGrayColor];
     [cell setBackgroundView:numLabel];
@@ -86,35 +101,17 @@ static NSString *headerIdentifier = @"headerIdentifier";
             CDetailModel *model = [[CDetailModel alloc] initWithDictionary:dict];
             [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.images] placeholderImage:nil];
             self.titleLabel.text = model.name;
-            self.authorLabel.text = model.author;
-            self.updateTimeLabel.text = model.updateValueLabel;
+            self.authorLabel.text = [NSString stringWithFormat:@"作者：%@",model.author];
+            self.updateTimeLabel.text = [NSString stringWithFormat:@"最近更新时间：%@",model.updateValueLabel];
             self.zuijingengxin.text = model.recentUpdateTime;
             self.contentLabel.text = model.introduction;
         }
-        [self.view addSubview:self.collectionView];
+        [self.collectionView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];
 }
 
 
-
-- (UICollectionView *)collectionView {
-    if (_collectionView == nil) {
-        self.layout = [[UICollectionViewFlowLayout alloc] init];
-        self.layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        self.layout.minimumInteritemSpacing = 1;
-        self.layout.minimumLineSpacing = 3;
-        self.layout.footerReferenceSize = CGSizeMake(kWidth, 60);
-        self.layout.itemSize = CGSizeMake(80, 40);
-        self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(10, 350, kWidth - 20, 327) collectionViewLayout:self.layout];
-        self.collectionView.backgroundColor = [UIColor clearColor];
-        self.collectionView.allowsMultipleSelection = YES;
-        self.collectionView.dataSource = self;
-        self.collectionView.delegate = self;
-        [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:itemIdentifier];
-    }
-    return _collectionView;
-}
 
 - (NSMutableArray *)dataAry {
     if (_dataAry == nil) {
@@ -138,4 +135,10 @@ static NSString *headerIdentifier = @"headerIdentifier";
 }
 
 
+- (IBAction)readBtn:(id)sender {
+    ReadViewController *readVC = [[ReadViewController alloc] init];
+    CDetailModel *model = self.numberArray[0];
+    readVC.ReadId = model.Id;
+    [self.navigationController pushViewController:readVC animated:YES];
+}
 @end

@@ -125,7 +125,7 @@ static NSString *code = @"20027";
             
             UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"恭喜你" message:@"注册成功" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *alertAc = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
             }];
             UIAlertAction *cancelAc = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
 //                LXJLog(@"取消");
@@ -155,7 +155,7 @@ static NSString *code = @"20027";
 - (BOOL)checkOut {
     if ([self valiMobile:self.phoneTF.text]) {
         LXJLog(@"请输入正确的手机号");
-        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"输入手机号" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入正确的手机号" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *alertAc = [UIAlertAction actionWithTitle:@"残忍拒绝" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self.navigationController dismissViewControllerAnimated:NO completion:nil];
             
@@ -163,7 +163,6 @@ static NSString *code = @"20027";
         UIAlertAction *cancelAc = [UIAlertAction actionWithTitle:@"重新输入" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             self.phoneTF.text = nil;
             self.passwordTF.text = nil;
-//            [self.navigationController popViewControllerAnimated:YES];
         }];
         
         
@@ -175,6 +174,23 @@ static NSString *code = @"20027";
         return NO;
     }
     if (self.passwordTF.text.length < 6) {
+        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入正确格式的密码" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *alertAc = [UIAlertAction actionWithTitle:@"残忍拒绝" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+            
+        }];
+        UIAlertAction *cancelAc = [UIAlertAction actionWithTitle:@"重新输入" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            self.phoneTF.text = nil;
+            self.passwordTF.text = nil;
+        
+        }];
+        
+        
+        [alertC addAction:alertAc];
+        [alertC addAction:cancelAc];
+        [self presentViewController:alertC animated:NO completion:^{
+            
+        }];
         return NO;
     }
     return YES;

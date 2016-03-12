@@ -110,7 +110,7 @@ static NSString *itemIdentifier = @"itemIdentifier";
 - (void)getModel {
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [sessionManager GET:[NSString stringWithFormat:@"%@&id=%@&page=%ld",kCDetail,self.CDetailID,_pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [sessionManager GET:[NSString stringWithFormat:@"%@&id=%@&page=%ld",kCDetail,self.CDetailID,(long)_pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;
         NSInteger code = [dic[@"code"] integerValue];
