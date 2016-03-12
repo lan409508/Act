@@ -11,5 +11,6 @@
 @interface CDetailViewController : UIViewController
 
 @property (nonatomic, strong) NSString *CDetailID;
+@property (nonatomic, strong) NSString *titleL;
 
 @end

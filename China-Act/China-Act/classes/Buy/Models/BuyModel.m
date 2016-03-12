@@ -12,9 +12,10 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dataDic{
     if (self) {
-        self.images = dataDic[@"dataDic"];
+        self.images = dataDic[@"images"];
         self.width = dataDic[@"width"];
         self.height = dataDic[@"height"];
+        self.url = dataDic[@"sourceImages"];
     }
     return self;
 }

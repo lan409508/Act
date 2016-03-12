@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,27 +15,48 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="毕业的季节，黑板画成为近年日本校园的流行！" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ea-kr-Jqv">
-                        <rect key="frame" x="161" y="8" width="196" height="36"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="山治君是我没错" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjj-Bk-ucA">
-                        <rect key="frame" x="161" y="87" width="103" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="山治君是我没错" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjj-Bk-ucA">
+                        <rect key="frame" x="155" y="87" width="103" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="ucC-Pr-YUK"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.88594933712121215" green="0.59131952403177446" blue="0.56665128317604052" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="14分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQm-ef-oTx">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQm-ef-oTx">
                         <rect key="frame" x="303" y="87" width="64" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="VGE-FE-0ln"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.88594933710000001" green="0.59131952399999999" blue="0.56665128320000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="brg-K1-pfl">
-                        <rect key="frame" x="8" y="10" width="145" height="100"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="brg-K1-pfl">
+                        <rect key="frame" x="8" y="10" width="140" height="100"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="毕业的季节，黑板画成为近年日本校园的流行！" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ea-kr-Jqv">
+                        <rect key="frame" x="155" y="8" width="206" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="iQm-ef-oTx" secondAttribute="bottom" constant="2" id="2hX-Oc-jav"/>
+                    <constraint firstAttribute="topMargin" secondItem="1Ea-kr-Jqv" secondAttribute="top" id="5Es-ET-ICf"/>
+                    <constraint firstItem="Gjj-Bk-ucA" firstAttribute="leading" secondItem="brg-K1-pfl" secondAttribute="trailing" constant="7" id="6AG-aO-4BN"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="iQm-ef-oTx" secondAttribute="trailing" id="Ai6-v6-Iqq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1Ea-kr-Jqv" secondAttribute="trailing" constant="6" id="DDa-a4-w9P"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Gjj-Bk-ucA" secondAttribute="trailing" constant="109" id="Rq6-cm-TVL"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="brg-K1-pfl" secondAttribute="bottom" id="S8C-8n-MvT"/>
+                    <constraint firstItem="brg-K1-pfl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="Wv0-g2-Pqb"/>
+                    <constraint firstItem="iQm-ef-oTx" firstAttribute="leading" secondItem="Gjj-Bk-ucA" secondAttribute="trailing" constant="45" id="X1Y-RW-clp"/>
+                    <constraint firstItem="1Ea-kr-Jqv" firstAttribute="leading" secondItem="brg-K1-pfl" secondAttribute="trailing" constant="7" id="aJQ-bz-YtI"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="brg-K1-pfl" secondAttribute="trailing" constant="219" id="fO2-s4-eVF"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Gjj-Bk-ucA" secondAttribute="bottom" constant="2" id="xIp-fe-aj8"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="brg-K1-pfl" secondAttribute="leading" id="xcy-oy-GoB"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="authorLabel" destination="Gjj-Bk-ucA" id="wEu-pI-MHR"/>
@@ -42,7 +64,7 @@
                 <outlet property="timeLabel" destination="iQm-ef-oTx" id="xKp-LZ-Qgp"/>
                 <outlet property="titleLabel" destination="1Ea-kr-Jqv" id="Msr-gY-IaB"/>
             </connections>
-            <point key="canvasLocation" x="326.5" y="187.5"/>
+            <point key="canvasLocation" x="365.5" y="186.5"/>
         </tableViewCell>
     </objects>
 </document>

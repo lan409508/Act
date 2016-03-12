@@ -10,8 +10,9 @@
 #import "BuyModel.h"
 @interface BuyCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, strong) UIImageView *myImageV;
-@property (nonatomic, strong) BuyModel *BModel;
-@property (nonatomic, strong) NSData *data;
+@property (strong, nonatomic)UIImageView *MyImage;
+@property (nonatomic,strong)UILabel * myTitle;
+@property (nonatomic,strong)BuyModel * model;
+@property (nonatomic,strong)NSData * data;
 
 @end

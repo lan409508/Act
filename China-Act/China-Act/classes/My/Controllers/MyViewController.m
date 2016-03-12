@@ -23,6 +23,10 @@
 @property (nonatomic, strong) UIView *shareView;
 @property (nonatomic, strong) UIView *grayView;
 @property (nonatomic, strong) UIButton *btn;
+//@property (nonatomic, strong) UIButton *btn1;
+//@property (nonatomic, strong) UIButton *btn2;
+//@property (nonatomic, strong) UIButton *btn3;
+//@property (nonatomic, strong) UIButton *btn4;
 
 @end
 
@@ -142,7 +146,7 @@
 
 - (UITableView *)tableView {
     if (_tableView == nil) {
-        self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 280, kWidth, kHeight - 30) style:UITableViewStylePlain];
+        self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kWidth, kWidth, kHeight - kHeight * 30/667) style:UITableViewStylePlain];
         self.tableView.separatorColor = [UIColor darkGrayColor];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
@@ -154,7 +158,7 @@
 - (UIButton *)btn {
     if (_btn == nil) {
         self.btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        self.btn.frame = CGRectMake(125, 230, 100, 25);
+        self.btn.frame = CGRectMake(kWidth * 1/3, kHeight *230/667,kWidth * 4/15, kHeight *25/667);
         [self.btn setTitle:@"登录" forState:UIControlStateNormal];
         self.btn.layer.cornerRadius = 5;
         self.btn.clipsToBounds = YES;

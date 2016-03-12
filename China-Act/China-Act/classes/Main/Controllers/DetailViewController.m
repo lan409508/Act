@@ -28,6 +28,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self showBackBtn];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:250/255.0 green:150/255.0 blue:160/255.0 alpha:1.0];
     
     if (self.judg == YES) {
         [self getDetailHtml:self.detailId];
@@ -56,7 +58,7 @@
 -(UIWebView *)webView{
 
     if (_webView == nil) {
-        self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 65, kWidth, kHeight - 100)];
+        self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, kHeight * 60/667, kWidth, kHeight - kHeight *100/667)];
         self.webView.backgroundColor = [UIColor clearColor];
         self.webView.opaque = NO;
         self.webView.dataDetectorTypes = UIDataDetectorTypeAll;

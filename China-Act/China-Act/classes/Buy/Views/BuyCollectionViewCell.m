@@ -11,25 +11,39 @@
 
 @implementation BuyCollectionViewCell
 
-- (void)setBModel:(BuyModel *)BModel {
-    [self.myImageV sd_setImageWithURL:[NSURL URLWithString:BModel.images] placeholderImage:nil];
+-(void)setModel:(BuyModel *)model
+{
+    [self.MyImage sd_setImageWithURL:[NSURL URLWithString:model.images] placeholderImage:nil];
+    
+    
+    
 }
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
-    if (self = [super initWithFrame:frame]) {
+    self = [super initWithFrame:frame];
+    if (self) {
+        NSArray *arrayOfViews = [[NSBundle mainBundle] loadNibNamed:@"BuyCollectionViewCell" owner:self options:nil];
+        self = [arrayOfViews objectAtIndex:0];
+        _MyImage = [[UIImageView alloc]init];
+        [self.contentView addSubview:_MyImage];
         
-        _myImageV = [[UIImageView alloc]init];
-        [self.contentView addSubview:_myImageV];
-        
+        // 如果路径不存在，return nil
+        if (arrayOfViews.count < 1)
+        {
+            return nil;
+        }
+        // 如果xib中view不属于UICollectionViewCell类，return nil
+        if (![[arrayOfViews objectAtIndex:0] isKindOfClass:[UICollectionViewCell class]])
+        {
+            return nil;
+        }
+        // 加载nib
     }
     return self;
 }
-
-// 自定义Layout
 -(void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
 {
-    _myImageV.frame = CGRectMake(0, 0, layoutAttributes.frame.size.width, layoutAttributes.frame.size.height);
+    _MyImage.frame = CGRectMake(0, 0, layoutAttributes.frame.size.width, layoutAttributes.frame.size.height);
     
 }
 

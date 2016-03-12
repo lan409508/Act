@@ -11,9 +11,11 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "DetailViewController.h"
 #import "PullingRefreshTableView.h"
+#import "ProgressHUD.h"
 #import "HWtools.h"
 #import "MainModel.h"
 #import "MainTableViewCell.h"
+#import "LoginViewController.h"
 
 
 
@@ -36,14 +38,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //导航栏右键
-    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    rightBtn.frame = CGRectMake(0, 0, 40, 30);
-    [rightBtn setImage:[UIImage imageNamed:@"xiaoxi"] forState:UIControlStateNormal];
-    UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
-    self.navigationItem.rightBarButtonItem = rightBarBtn;
-    
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0],NSForegroundColorAttributeName:[UIColor colorWithRed:250/255.0 green:150/255.0 blue:160/255.0 alpha:1.0]}];
+   
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:250/255.0 green:150/255.0 blue:160/255.0 alpha:1.0];
     [self.tableView registerNib:[UINib nibWithNibName:@"MainTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     self.tableView.rowHeight = 110;
     [self.tableView launchRefreshing];
@@ -71,10 +68,14 @@
 
 - (PullingRefreshTableView *)tableView{
     if (_tableView == nil) {
-        self.tableView = [[PullingRefreshTableView alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight) pullingDelegate:self];
-        self.tableView.delegate = self;
+        self.tableView = [[PullingRefreshTableView alloc] initWithFrame:CGRectMake(0, 60, kWidth, kHeight - (kHeight * 110/667))];
         self.tableView.dataSource = self;
-    }
+        self.tableView.delegate = self;
+        self.tableView.rowHeight = kWidth * 44/75;
+        self.tableView.pullingDelegate = self;
+        self.tableView.separatorColor = [UIColor lightGrayColor];
+        
+        [self.view addSubview:self.tableView];    }
     return _tableView;
 }
 
@@ -139,6 +140,7 @@
     return [HWtools getSystemNowDate];
 }
 
+
 #pragma mark --------- CostumMethod
 - (void)getModel{
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
@@ -163,6 +165,8 @@
 }
 
 - (void)loadData{
+//    [ProgressHUD showSuccess:@"完成刷新"];
+
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
    [sessionManager GET:[NSString stringWithFormat:@"%@page=%ld",kMain,_pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -172,7 +176,7 @@
        NSInteger code = [dic[@"code"] integerValue];
        NSString *error = dic[@"error"];
        if ([error isEqualToString:@""] && code == 0 ) {
-            NSString *rType = dic[@"params"][@"r"];
+          NSString *rType = dic[@"params"][@"r"];
            NSArray *array = dic[@"results"];
            if (self.listArray.count > 0) {
                if (self.refreshing) {
@@ -184,10 +188,10 @@
                 [self.listArray addObject:model];
            }
        }
+       [self.tableView tableViewDidFinishedLoading];
        [self.tableView reloadData];
-//       NSLog(@"%@",responseObject);
    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-     //  NSLog(@"%@",error);
+       
    }];
 }
 
@@ -228,6 +232,7 @@
     }
     self.tableView.tableHeaderView = self.headerTableView;
 }
+
 
 #pragma mark --------- 滚动轮播图
 //定时器

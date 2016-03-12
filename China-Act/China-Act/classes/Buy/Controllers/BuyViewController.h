@@ -10,4 +10,6 @@
 
 @interface BuyViewController : UIViewController
 
+@property (nonatomic, strong) NSString *labelID;
+
 @end

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -35,26 +34,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yNZ-ng-irg">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yNZ-ng-irg">
+                                <rect key="frame" x="-8" y="64" width="391" height="603"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="迫不及待和你一起卖萌呢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dI-Rk-V0G">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="迫不及待和你一起卖萌呢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dI-Rk-V0G">
                                         <rect key="frame" x="114" y="93" width="147" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D82-44-5cR">
-                                        <rect key="frame" x="293" y="191" width="62" height="28"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="忘记密码">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Ig4-eg-Bfb" kind="push" id="Gv3-Xk-QOf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqg-9t-Amd">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqg-9t-Amd">
                                         <rect key="frame" x="20" y="294" width="335" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -66,14 +55,10 @@
                                             <segue destination="Nl7-Qg-pkV" kind="push" id="rAn-yt-Tqq"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="denglutouxiang" translatesAutoresizingMaskIntoConstraints="NO" id="5OA-v4-hDj">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="denglutouxiang" translatesAutoresizingMaskIntoConstraints="NO" id="5OA-v4-hDj">
                                         <rect key="frame" x="152" y="10" width="70" height="70"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="7h7-HM-aar"/>
-                                            <constraint firstAttribute="height" constant="70" id="Lcm-Nx-E1v"/>
-                                        </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpz-f4-e9j">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpz-f4-e9j">
                                         <rect key="frame" x="20" y="255" width="335" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -85,20 +70,20 @@
                                             <action selector="dengluBtn:" destination="zdF-6T-WvA" eventType="touchUpInside" id="4Yp-4d-WLl"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Otd-Cb-xbs">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Otd-Cb-xbs">
                                         <rect key="frame" x="20" y="122" width="335" height="61"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="denglu_phone" translatesAutoresizingMaskIntoConstraints="NO" id="eIZ-Ld-xPQ">
-                                                <rect key="frame" x="13" y="9" width="12" height="16"/>
-                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="colo" translatesAutoresizingMaskIntoConstraints="NO" id="IjV-9f-ndC">
                                                 <rect key="frame" x="37" y="31" width="290" height="1"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="denglu_phone" translatesAutoresizingMaskIntoConstraints="NO" id="eIZ-Ld-xPQ">
+                                                <rect key="frame" x="13" y="9" width="12" height="16"/>
+                                            </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rhw-4M-JCY">
-                                                <rect key="frame" x="41" y="34" width="286" height="27"/>
+                                                <rect key="frame" x="41" y="37" width="286" height="24"/>
                                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
@@ -108,7 +93,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Z8-X5-2iS">
                                                 <rect key="frame" x="41" y="2" width="286" height="30"/>
                                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -121,35 +106,21 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D82-44-5cR">
+                                        <rect key="frame" x="305" y="191" width="50" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="忘记密码">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Ig4-eg-Bfb" kind="push" id="Gv3-Xk-QOf"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.35820009000000003" blue="0.40086014489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="5OA-v4-hDj" firstAttribute="top" secondItem="yNZ-ng-irg" secondAttribute="top" constant="10" id="8jf-pT-Rsg"/>
-                                    <constraint firstItem="5OA-v4-hDj" firstAttribute="centerX" secondItem="yNZ-ng-irg" secondAttribute="centerX" id="BVh-8m-O8K"/>
-                                    <constraint firstItem="Otd-Cb-xbs" firstAttribute="top" secondItem="yNZ-ng-irg" secondAttribute="top" constant="122" id="Bth-l1-QWK"/>
-                                    <constraint firstItem="Kpz-f4-e9j" firstAttribute="centerX" secondItem="yNZ-ng-irg" secondAttribute="centerX" id="KpX-cj-d8P"/>
-                                    <constraint firstItem="5dI-Rk-V0G" firstAttribute="top" secondItem="5OA-v4-hDj" secondAttribute="bottom" constant="13" id="PIG-hL-NhS"/>
-                                    <constraint firstItem="5dI-Rk-V0G" firstAttribute="centerX" secondItem="yNZ-ng-irg" secondAttribute="centerX" id="Pi5-ef-z1O"/>
-                                    <constraint firstItem="Otd-Cb-xbs" firstAttribute="trailing" secondItem="D82-44-5cR" secondAttribute="trailing" id="Qmi-hp-vwb"/>
-                                    <constraint firstItem="Otd-Cb-xbs" firstAttribute="top" secondItem="5dI-Rk-V0G" secondAttribute="bottom" constant="8" symbolic="YES" id="WUI-JM-xhA"/>
-                                    <constraint firstItem="Otd-Cb-xbs" firstAttribute="leading" secondItem="Kpz-f4-e9j" secondAttribute="leading" id="cia-mf-ZZn"/>
-                                    <constraint firstItem="D82-44-5cR" firstAttribute="top" secondItem="Otd-Cb-xbs" secondAttribute="bottom" constant="8" symbolic="YES" id="faD-8V-5ip"/>
-                                    <constraint firstItem="Otd-Cb-xbs" firstAttribute="leading" secondItem="yNZ-ng-irg" secondAttribute="leading" constant="20" id="kdb-bu-naS"/>
-                                    <constraint firstItem="Otd-Cb-xbs" firstAttribute="leading" secondItem="gqg-9t-Amd" secondAttribute="leading" id="m4E-Xv-kUe"/>
-                                    <constraint firstItem="gqg-9t-Amd" firstAttribute="centerX" secondItem="yNZ-ng-irg" secondAttribute="centerX" id="toW-WA-ysv"/>
-                                    <constraint firstItem="gqg-9t-Amd" firstAttribute="top" secondItem="Kpz-f4-e9j" secondAttribute="bottom" constant="9" id="vJf-Gl-j19"/>
-                                    <constraint firstItem="Otd-Cb-xbs" firstAttribute="centerX" secondItem="yNZ-ng-irg" secondAttribute="centerX" id="zQH-09-abq"/>
-                                    <constraint firstItem="gqg-9t-Amd" firstAttribute="top" secondItem="yNZ-ng-irg" secondAttribute="top" constant="294" id="zbq-M3-Pwf"/>
-                                </constraints>
+                                <color key="backgroundColor" white="0.69765111020000004" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="yNZ-ng-irg" firstAttribute="leading" secondItem="iE1-eR-y2v" secondAttribute="leadingMargin" constant="-20" id="5pt-3S-Zi8"/>
-                            <constraint firstItem="BYA-lC-azS" firstAttribute="top" secondItem="yNZ-ng-irg" secondAttribute="bottom" id="L3a-xf-kkV"/>
-                            <constraint firstItem="yNZ-ng-irg" firstAttribute="top" secondItem="RXt-OE-7ba" secondAttribute="bottom" id="NeS-5B-m13"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yNZ-ng-irg" secondAttribute="trailing" constant="-20" id="apw-nj-b8j"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gd2-QE-9CD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -231,7 +202,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="点击‘开始卖萌’按钮，即表示同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ju-JR-FhF">
                                 <rect key="frame" x="66" y="344" width="179" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="注册协议" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1FS-wr-a3h">

@@ -29,7 +29,8 @@ static NSString *itemIdentifier = @"itemIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:250/255.0 green:150/255.0 blue:160/255.0 alpha:1.0];
     [self showBackBtn];
     [self getModel];
 }
@@ -44,7 +45,7 @@ static NSString *itemIdentifier = @"itemIdentifier";
     UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.layout.itemSize.width, self.layout.itemSize.height)];
     [imageV sd_setImageWithURL:[NSURL URLWithString:model.images] placeholderImage:nil];
  
-    [cell addSubview:imageV];
+    [cell setBackgroundView:imageV];
     
     return cell;
 }

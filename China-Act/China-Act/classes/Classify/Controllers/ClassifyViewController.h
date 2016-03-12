@@ -11,6 +11,6 @@
 @interface ClassifyViewController : UIViewController
 
 @property (nonatomic, assign) ClassifyListType classifyListType;
-@property (nonatomic, strong) UILabel *titleLabel;
+
 
 @end

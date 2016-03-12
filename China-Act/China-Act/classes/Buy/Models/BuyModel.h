@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSString *images;
 @property (strong, nonatomic) NSString *width;
 @property (strong, nonatomic) NSString *height;
+@property (strong, nonatomic) NSString *url;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dataDic;
 

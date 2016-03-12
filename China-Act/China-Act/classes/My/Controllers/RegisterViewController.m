@@ -26,7 +26,8 @@ static NSString *code = @"20027";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"注册";
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:250/255.0 green:150/255.0 blue:160/255.0 alpha:1.0];
     self.passwordTF.secureTextEntry = YES;
     [self showBackBtn];
 }

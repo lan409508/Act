@@ -38,7 +38,8 @@ static NSString *headerIdentifier = @"headerIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:250/255.0 green:150/255.0 blue:160/255.0 alpha:1.0];
     [self getModel];
     [self showBackBtn];
 }
@@ -54,7 +55,7 @@ static NSString *headerIdentifier = @"headerIdentifier";
     numLabel.text = [NSString stringWithFormat:@"%ld话",indexPath.row];
     numLabel.textAlignment = NSTextAlignmentCenter;
     numLabel.textColor = [UIColor lightGrayColor];
-    [cell addSubview:numLabel];
+    [cell setBackgroundView:numLabel];
     return cell;
 }
 
@@ -96,10 +97,6 @@ static NSString *headerIdentifier = @"headerIdentifier";
 }
 
 
-
-- (void)pinglunAction {
-    
-}
 
 - (UICollectionView *)collectionView {
     if (_collectionView == nil) {

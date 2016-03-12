@@ -8,6 +8,7 @@
 
 #import "CDetailViewController.h"
 #import "UIViewController+Common.h"
+#import "MJRefresh.h"
 #import "CDetailModel.h"
 #import <AFHTTPSessionManager.h>
 #import <SDWebImage/UIImageView+WebCache.h>
@@ -23,8 +24,11 @@ static NSString *itemIdentifier = @"itemIdentifier";
 @property (nonatomic, strong) NSMutableArray *BigArray;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) UIImageView *imageV;
-@property (nonatomic, strong) UILabel *updateInfoLabel;
+
+//@property (nonatomic, strong) UILabel *updateInfoLabel;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, assign) NSInteger pageCount;
+@property (nonatomic, assign) BOOL refreshing;
 
 @end
 
@@ -33,9 +37,14 @@ static NSString *itemIdentifier = @"itemIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:250/255.0 green:150/255.0 blue:160/255.0 alpha:1.0];
+    self.title = self.titleL;
+    _pageCount = 1;
     self.view.backgroundColor = [UIColor whiteColor];
     [self showBackBtn];
     [self getModel];
+    [self refreshingAction];
     [self.view addSubview:self.collectionView];
 }
 
@@ -46,20 +55,29 @@ static NSString *itemIdentifier = @"itemIdentifier";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:itemIdentifier forIndexPath:indexPath];
     CDetailModel *model = self.BigArray[indexPath.row];
-    self.imageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.layout.itemSize.width, self.layout.itemSize.height - 30)];
+    for (UIView *viewi in cell.contentView.subviews) {
+        [viewi removeFromSuperview];
+        
+    }
+    self.imageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.layout.itemSize.width, self.layout.itemSize.height - kWidth *4/75)];
     [self.imageV sd_setImageWithURL:[NSURL URLWithString:model.images] placeholderImage:nil];
-    self.updateInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 115, self.layout.itemSize.width, 20)];
-    self.updateInfoLabel.text = model.updateInfo;
-    self.updateInfoLabel.font = [UIFont systemFontOfSize:14.0];
-    self.updateInfoLabel.textColor = [UIColor whiteColor];
-    self.updateInfoLabel.textAlignment = NSTextAlignmentLeft;
-    self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 65, self.layout.itemSize.width, self.layout.itemSize.height)];
+    
+    for (UIView *viewi in cell.contentView.subviews) {
+        [viewi removeFromSuperview];
+        
+    }
+   UILabel *updateInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, kWidth * 26/75, self.layout.itemSize.width, 20)];
+    updateInfoLabel.text = model.updateInfo;
+    updateInfoLabel.font = [UIFont systemFontOfSize:14.0];
+    updateInfoLabel.textColor = [UIColor whiteColor];
+    updateInfoLabel.textAlignment = NSTextAlignmentLeft;
+    self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, kWidth *1/5, self.layout.itemSize.width, self.layout.itemSize.height)];
     self.titleLabel.text = model.name;
     self.titleLabel.font = [UIFont systemFontOfSize:14.0];
     self.titleLabel.textAlignment = NSTextAlignmentLeft;
-    [cell addSubview:self.imageV];
-    [cell addSubview:self.titleLabel];
-    [cell addSubview:self.updateInfoLabel];
+    [cell.contentView addSubview:self.imageV];
+    [cell.contentView addSubview:self.titleLabel];
+    [cell.contentView addSubview:updateInfoLabel];
     return cell;
 }
 
@@ -71,10 +89,28 @@ static NSString *itemIdentifier = @"itemIdentifier";
     
 }
 
+-(void)refreshingAction{
+    
+    self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        self.refreshing = YES;
+        [self.collectionView.mj_header beginRefreshing];
+        [self.collectionView.mj_header endRefreshing];
+    }];
+    self.collectionView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        
+        [self.collectionView.mj_footer beginRefreshing];
+        _pageCount +=1;
+        self.refreshing = NO;
+        [self getModel];
+        [self.collectionView.mj_footer endRefreshing];
+    }];
+    
+}
+
 - (void)getModel {
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [sessionManager GET:[NSString stringWithFormat:@"%@&id=%@",kCDetail,self.CDetailID] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [sessionManager GET:[NSString stringWithFormat:@"%@&id=%@&page=%ld",kCDetail,self.CDetailID,_pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;
         NSInteger code = [dic[@"code"] integerValue];
@@ -97,8 +133,7 @@ static NSString *itemIdentifier = @"itemIdentifier";
         self.layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         self.layout.minimumInteritemSpacing = 1;
         self.layout.minimumLineSpacing = 1;
-        self.layout.headerReferenceSize = CGSizeMake(kWidth, (kWidth * 6/75));
-        self.layout.footerReferenceSize = CGSizeMake(kWidth, (kWidth * 6/75));
+//        self.layout.headerReferenceSize = CGSizeMake(kWidth, (kWidth * 6/75));
         self.layout.itemSize = CGSizeMake((kWidth * 118/375), kHeight / 4);
         self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake((kWidth * 1/75), 0, kWidth - (kWidth * 3/75), kHeight - (kHeight * 3/75)) collectionViewLayout:self.layout];
         self.collectionView.backgroundColor = [UIColor clearColor];
