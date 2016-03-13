@@ -198,7 +198,7 @@
     weiboBtn.frame = CGRectMake(kWidth * 1/8, kWidth * 1/6, kWidth * 1/6, kWidth *1/6);
     [weiboBtn setImage:[UIImage imageNamed:@"share_weibo"] forState:UIControlStateNormal];
     [weiboBtn addTarget:self action:@selector(SendRequest) forControlEvents:UIControlEventTouchUpInside];
-    UILabel *weiboLabel = [[UILabel alloc]initWithFrame:CGRectMake(kWidth * 1/9, 100, 70, 20)];
+    UILabel *weiboLabel = [[UILabel alloc]initWithFrame:CGRectMake(kWidth * 1/9, kWidth * 1/3, 70, 20)];
     weiboLabel.text = @"新浪微博";
     weiboLabel.textColor = [UIColor whiteColor];
     weiboLabel.font = [UIFont systemFontOfSize:13.0];
@@ -208,10 +208,10 @@
     
     //朋友
     UIButton *friendBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    friendBtn.frame = CGRectMake(kWidth * 11/24, kWidth * 1/6, kWidth * 1/6, kWidth *1/6);
+    friendBtn.frame = CGRectMake(kWidth * 78/192, kWidth * 1/6, kWidth * 1/6, kWidth *1/6);
     [friendBtn setImage:[UIImage imageNamed:@"share_wechat"] forState:UIControlStateNormal];
     [friendBtn addTarget:self action:@selector(friend) forControlEvents:UIControlEventTouchUpInside];
-    UILabel *friendLabel = [[UILabel alloc]initWithFrame:CGRectMake(kWidth * 3/7, 100, 70, 20)];
+    UILabel *friendLabel = [[UILabel alloc]initWithFrame:CGRectMake(kWidth * 45/112, kWidth * 1/3, 70, 20)];
     friendLabel.text = @"微信好友";
     friendLabel.textColor = [UIColor whiteColor];
     friendLabel.font = [UIFont systemFontOfSize:13.0];
@@ -221,10 +221,10 @@
     
     //朋友圈
     UIButton *quanBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    quanBtn.frame = CGRectMake(kWidth *  23/32, 40, 70, 70);
+    quanBtn.frame = CGRectMake(kWidth *  45/64, kWidth * 1/6, kWidth * 1/6, kWidth * 1/6);
     [quanBtn setImage:[UIImage imageNamed:@"share_wxcircle"] forState:UIControlStateNormal];
     [quanBtn addTarget:self action:@selector(testMessagesAct) forControlEvents:UIControlEventTouchUpInside];
-    UILabel *quanLabel = [[UILabel alloc]initWithFrame:CGRectMake(kWidth * 5/7, 100, 70, 20)];
+    UILabel *quanLabel = [[UILabel alloc]initWithFrame:CGRectMake(kWidth * 39/56, kWidth * 1/3, 70, 20)];
     quanLabel.text = @"微信朋友圈";
     quanLabel.textColor = [UIColor whiteColor];
     quanLabel.font = [UIFont systemFontOfSize:13.0];

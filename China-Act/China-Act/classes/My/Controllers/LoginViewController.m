@@ -87,27 +87,47 @@
 */
 
 - (IBAction)dengluBtn:(id)sender {
-    [BmobUser loginWithUsernameInBackground:self.phoneTF.text password:self.passwordTF.text block:^(BmobUser *user, NSError *error) {
-        if (user) {
-            LXJLog(@"登录成功");
-        } else {
-            UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"哎呀呀" message:@"好像没网了哎..." preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"再试试" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//    if (self.phoneTF.text == nil || self.passwordTF.text == nil) {
+//        UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"提示" message:@"请输入手机号或密码" preferredStyle:UIAlertControllerStyleAlert];
+//        
+//        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"再试试" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            
+//            self.phoneTF.text = nil;
+//            self.passwordTF.text = nil;
+//            
+//        }];
+//        UIAlertAction *defaultAction1 = [UIAlertAction actionWithTitle:@"转身离开" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//             [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+//        }];
+//        
+//        [alert addAction:defaultAction];
+//        [alert addAction:defaultAction1];
+//        [self presentViewController:alert animated:YES completion:nil];
+//        
+//    }
+//    else {
+        [BmobUser loginWithUsernameInBackground:self.phoneTF.text password:self.passwordTF.text block:^(BmobUser *user, NSError *error) {
+            if (user) {
+                LXJLog(@"登录成功");
+            } else {
+                UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"哎呀呀" message:@"没网了哎..." preferredStyle:UIAlertControllerStyleAlert];
                 
-                self.phoneTF.text = nil;
-                self.passwordTF.text = nil;
+                UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"再试试" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    
+                    self.phoneTF.text = nil;
+                    self.passwordTF.text = nil;
+                    
+                }];
+                UIAlertAction *defaultAction1 = [UIAlertAction actionWithTitle:@"转身离开" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    
+                }];
                 
-            }];
-            UIAlertAction *defaultAction1 = [UIAlertAction actionWithTitle:@"转身离开" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [alert addAction:defaultAction];
+                [alert addAction:defaultAction1];
+                [self presentViewController:alert animated:YES completion:nil];
                 
-            }];
-            
-            [alert addAction:defaultAction];
-            [alert addAction:defaultAction1];
-            [self presentViewController:alert animated:YES completion:nil];
-            
-        }
-    }];
+            }
+        }];
+//    }
 }
 @end

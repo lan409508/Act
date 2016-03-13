@@ -24,9 +24,6 @@ static NSString *itemIdentifier = @"itemIdentifier";
 @property (nonatomic, strong) NSMutableArray *BigArray;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) UIImageView *imageV;
-
-//@property (nonatomic, strong) UILabel *updateInfoLabel;
-@property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, assign) NSInteger pageCount;
 @property (nonatomic, assign) BOOL refreshing;
 
@@ -61,23 +58,8 @@ static NSString *itemIdentifier = @"itemIdentifier";
     }
     self.imageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.layout.itemSize.width, self.layout.itemSize.height - kWidth *4/75)];
     [self.imageV sd_setImageWithURL:[NSURL URLWithString:model.images] placeholderImage:nil];
-    
-    for (UIView *viewi in cell.contentView.subviews) {
-        [viewi removeFromSuperview];
-        
-    }
-   UILabel *updateInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, kWidth * 26/75, self.layout.itemSize.width, 20)];
-    updateInfoLabel.text = model.updateInfo;
-    updateInfoLabel.font = [UIFont systemFontOfSize:14.0];
-    updateInfoLabel.textColor = [UIColor whiteColor];
-    updateInfoLabel.textAlignment = NSTextAlignmentLeft;
-    self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, kWidth *1/5, self.layout.itemSize.width, self.layout.itemSize.height)];
-    self.titleLabel.text = model.name;
-    self.titleLabel.font = [UIFont systemFontOfSize:14.0];
-    self.titleLabel.textAlignment = NSTextAlignmentLeft;
+
     [cell.contentView addSubview:self.imageV];
-    [cell.contentView addSubview:self.titleLabel];
-    [cell.contentView addSubview:updateInfoLabel];
     return cell;
 }
 
